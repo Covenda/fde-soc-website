@@ -7,25 +7,33 @@ import { Container } from "@/components/container";
 import { Section } from "@/components/section";
 import { ServiceCard } from "@/components/service-card";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export const metadata: Metadata = {
   title: "Security Engineering & Operations Services",
-  description: "Comprehensive security engineering services from assessment to ongoing operations. Forward-deployed engineers and co-managed SOC services.",
+  description:
+    "Comprehensive security engineering services from assessment to ongoing operations. Forward-deployed engineers and co-managed SOC services.",
 };
 
 const services = [
   {
     icon: Shield,
     title: "Forward-Deployed Engineering",
-    description: "Embedded security engineers who join your team to build and improve your security posture",
+    description:
+      "Embedded security engineers who join your team to build and improve your security posture",
     features: [
       "Sprint-based delivery (2-week cycles)",
       "1-3+ engineers embedded with your team",
       "Detection engineering & automation",
-      "Knowledge transfer & documentation"
+      "Knowledge transfer & documentation",
     ],
-    href: "/services/fde"
+    href: "/services/fde",
   },
   {
     icon: Activity,
@@ -35,10 +43,10 @@ const services = [
       "Co-managed detection and response",
       "On-call support with SLOs",
       "Continuous tuning and improvement",
-      "Monthly strategic reviews"
+      "Monthly strategic reviews",
     ],
-    href: "/services/ai-soc"
-  }
+    href: "/services/ai-soc",
+  },
 ];
 
 const deliverables = [
@@ -49,8 +57,8 @@ const deliverables = [
       "Sigma rules for SIEM platforms",
       "KQL queries for Sentinel",
       "SPL searches for Splunk",
-      "Custom parsers and data models"
-    ]
+      "Custom parsers and data models",
+    ],
   },
   {
     icon: Activity,
@@ -59,8 +67,8 @@ const deliverables = [
       "Automated response playbooks",
       "Investigation workflows",
       "Enrichment pipelines",
-      "Ticketing integrations"
-    ]
+      "Ticketing integrations",
+    ],
   },
   {
     icon: FileCheck,
@@ -69,9 +77,9 @@ const deliverables = [
       "Threat intelligence reports",
       "Detection logic documentation",
       "Runbook procedures",
-      "Architecture diagrams"
-    ]
-  }
+      "Architecture diagrams",
+    ],
+  },
 ];
 
 export default function ServicesPage() {
@@ -90,7 +98,8 @@ export default function ServicesPage() {
           <div className="text-center mb-16">
             <h2 className="mb-4">Your engagement journey</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              We meet you where you are and scale with your needs, from initial assessment to full-time operations.
+              We meet you where you are and scale with your needs, from initial
+              assessment to full-time operations.
             </p>
           </div>
 
@@ -108,7 +117,9 @@ export default function ServicesPage() {
             <Card>
               <CardHeader>
                 <CardTitle>1. Assess (2-4 weeks)</CardTitle>
-                <CardDescription>Fixed-scope security posture review</CardDescription>
+                <CardDescription>
+                  Fixed-scope security posture review
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm text-muted-foreground">
@@ -159,7 +170,8 @@ export default function ServicesPage() {
           <div className="text-center mb-16">
             <h2 className="mb-4">Our service offerings</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Choose the model that fits your needs, from project-based FDE engagements to ongoing co-managed operations.
+              Choose the model that fits your needs, from project-based FDE
+              engagements to ongoing co-managed operations.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
@@ -176,7 +188,8 @@ export default function ServicesPage() {
           <div className="text-center mb-16">
             <h2 className="mb-4">What you get</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Every engagement delivers production-ready security artifacts, not just reports or recommendations.
+              Every engagement delivers production-ready security artifacts, not
+              just reports or recommendations.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-3">
@@ -191,7 +204,10 @@ export default function ServicesPage() {
                 <CardContent>
                   <ul className="space-y-2">
                     {deliverable.items.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <li
+                        key={idx}
+                        className="flex items-start gap-2 text-sm text-muted-foreground"
+                      >
                         <span className="text-primary mt-0.5">•</span>
                         <span>{item}</span>
                       </li>
@@ -210,7 +226,8 @@ export default function ServicesPage() {
           <div className="text-center mb-16">
             <h2 className="mb-4">Powered by the unified risk platform</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              All our services leverage the Covenda platform to connect threat models, controls, evidence, detections, and automated response.
+              All our services leverage the Covenda platform to connect threat
+              models, controls, evidence, detections, and automated response.
             </p>
           </div>
           <div className="rounded-lg border bg-card p-8">
@@ -231,13 +248,15 @@ export default function ServicesPage() {
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="mb-4">Start with an assessment</h2>
             <p className="text-lg text-muted-foreground mb-10">
-              Not sure where to begin? Our 2-4 week assessment provides a comprehensive review of your security posture and a prioritized roadmap.
+              Not sure where to begin? Our 2-4 week assessment provides a
+              comprehensive review of your security posture and a prioritized
+              roadmap.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="xl" asChild>
                 <Link href="/pricing/services">
                   View Pricing
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
               <Button size="xl" variant="outline" asChild>

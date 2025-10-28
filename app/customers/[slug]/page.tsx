@@ -18,8 +18,13 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const caseStudy = await getCaseStudyBySlug(params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const caseStudy = await getCaseStudyBySlug(slug);
 
   if (!caseStudy) {
     return {
@@ -33,8 +38,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function CaseStudyPage({ params }: { params: { slug: string } }) {
-  const caseStudy = await getCaseStudyBySlug(params.slug);
+export default async function CaseStudyPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const caseStudy = await getCaseStudyBySlug(slug);
 
   if (!caseStudy) {
     notFound();
@@ -81,16 +91,26 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
                   <CardContent>
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
-                        <span className="text-xs text-muted-foreground">Before:</span>
-                        <span className="text-sm font-semibold">{metric.before}</span>
+                        <span className="text-xs text-muted-foreground">
+                          Before:
+                        </span>
+                        <span className="text-sm font-semibold">
+                          {metric.before}
+                        </span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="text-xs text-muted-foreground">After:</span>
-                        <span className="text-sm font-semibold">{metric.after}</span>
+                        <span className="text-xs text-muted-foreground">
+                          After:
+                        </span>
+                        <span className="text-sm font-semibold">
+                          {metric.after}
+                        </span>
                       </div>
                       <div className="flex items-center gap-2 pt-2 border-t">
                         <TrendingUp className="h-4 w-4 text-primary" />
-                        <span className="text-base font-bold text-primary">{metric.improvement}</span>
+                        <span className="text-base font-bold text-primary">
+                          {metric.improvement}
+                        </span>
                       </div>
                     </div>
                   </CardContent>
@@ -165,17 +185,20 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="mb-4">Ready for similar results?</h2>
             <p className="text-lg text-muted-foreground mb-10">
-              Let's discuss how we can help you build and operate your security program.
+              Let's discuss how we can help you build and operate your security
+              program.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="xl" asChild>
                 <Link href="/contact">
                   Get Started
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
               <Button size="xl" variant="outline" asChild>
-                <Link href="/customers/case-studies">View All Case Studies</Link>
+                <Link href="/customers/case-studies">
+                  View All Case Studies
+                </Link>
               </Button>
             </div>
           </div>

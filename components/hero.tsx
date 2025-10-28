@@ -34,10 +34,10 @@ export function Hero({
             {(primaryCta || secondaryCta) && (
               <div className="mt-10 flex items-center justify-center gap-x-6 animate-fade-in-up [animation-delay:400ms]">
                 {primaryCta && (
-                  <Button size="lg" asChild>
+                  <Button size="lg" variant="black" asChild>
                     <Link href={primaryCta.href}>
                       {primaryCta.text}
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                      <ArrowRight className="h-4 w-4" />
                     </Link>
                   </Button>
                 )}

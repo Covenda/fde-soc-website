@@ -21,7 +21,10 @@ export function Navigation() {
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
       <Container>
-        <nav className="flex items-center justify-between py-4" aria-label="Global">
+        <nav
+          className="flex items-center justify-between py-4"
+          aria-label="Global"
+        >
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="text-xl font-bold text-primary">Covenda</span>
@@ -49,10 +52,10 @@ export function Navigation() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
-            <Button variant="outline" asChild>
+            <Button variant="orange" asChild>
               <Link href="/contact">Talk to an Engineer</Link>
             </Button>
-            <Button asChild>
+            <Button variant="black" asChild>
               <Link href="/contact">Request Demo</Link>
             </Button>
           </div>
@@ -65,7 +68,11 @@ export function Navigation() {
           <div className="fixed inset-0 z-50" />
           <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-border">
             <div className="flex items-center justify-between">
-              <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
+              <Link
+                href="/"
+                className="-m-1.5 p-1.5"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 <span className="text-xl font-bold text-primary">Covenda</span>
               </Link>
               <button
@@ -92,13 +99,19 @@ export function Navigation() {
                   ))}
                 </div>
                 <div className="py-6 space-y-2">
-                  <Button variant="outline" className="w-full" asChild>
-                    <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+                  <Button variant="orange" className="w-full" asChild>
+                    <Link
+                      href="/contact"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
                       Talk to an Engineer
                     </Link>
                   </Button>
-                  <Button className="w-full" asChild>
-                    <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+                  <Button variant="black" className="w-full" asChild>
+                    <Link
+                      href="/contact"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
                       Request Demo
                     </Link>
                   </Button>

@@ -17,8 +17,13 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = await getBlogPostBySlug(params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getBlogPostBySlug(slug);
 
   if (!post) {
     return {
@@ -32,8 +37,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = await getBlogPostBySlug(params.slug);
+export default async function BlogPostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const post = await getBlogPostBySlug(slug);
 
   if (!post) {
     notFound();
@@ -53,7 +63,9 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
             <div className="flex flex-wrap gap-2 mb-4">
               {post.tags.map((tag) => (
-                <Badge key={tag} variant="secondary">{tag}</Badge>
+                <Badge key={tag} variant="secondary">
+                  {tag}
+                </Badge>
               ))}
             </div>
 
@@ -86,10 +98,11 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="mb-4">Need help with security engineering?</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Our Forward-Deployed Engineers can help you build and operate world-class security programs.
+              Our Forward-Deployed Engineers can help you build and operate
+              world-class security programs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild>
+              <Button size="lg" variant="orange" asChild>
                 <Link href="/contact">Talk to an Engineer</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>

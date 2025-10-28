@@ -12,11 +12,20 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Covenda - Build & Run Your AI-SOC with Forward-Deployed Security Engineers",
+    default:
+      "Covenda - Build & Run Your AI-SOC with Forward-Deployed Security Engineers",
     template: "%s | Covenda",
   },
-  description: "We build and run your AI-SOC with Forward-Deployed Security Engineers on the Covenda platform. Security engineering and operations as a service.",
-  keywords: ["security engineering", "AI-SOC", "forward deployed engineers", "SOC operations", "threat detection", "security automation"],
+  description:
+    "We build and run your AI-SOC with Forward-Deployed Security Engineers on the Covenda platform. Security engineering and operations as a service.",
+  keywords: [
+    "security engineering",
+    "AI-SOC",
+    "forward deployed engineers",
+    "SOC operations",
+    "threat detection",
+    "security automation",
+  ],
   authors: [{ name: "Covenda" }],
   creator: "Covenda",
   metadataBase: new URL("https://covenda.ai"),
@@ -25,13 +34,16 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://covenda.ai",
     siteName: "Covenda",
-    title: "Covenda - Build & Run Your AI-SOC with Forward-Deployed Security Engineers",
-    description: "We build and run your AI-SOC with Forward-Deployed Security Engineers on the Covenda platform.",
+    title:
+      "Covenda - Build & Run Your AI-SOC with Forward-Deployed Security Engineers",
+    description:
+      "We build and run your AI-SOC with Forward-Deployed Security Engineers on the Covenda platform.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Covenda - Build & Run Your AI-SOC",
-    description: "Security engineering and operations as a service with Forward-Deployed Engineers.",
+    description:
+      "Security engineering and operations as a service with Forward-Deployed Engineers.",
   },
   robots: {
     index: true,

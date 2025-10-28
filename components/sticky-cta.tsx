@@ -84,27 +84,26 @@ export function StickyCTA({
             <div className="flex items-center gap-3 ml-auto">
               <Button
                 asChild
-                variant="orange"
+                variant="black"
                 size="sm"
                 onClick={handleSecondaryClick}
                 className="hidden sm:inline-flex"
               >
                 <Link href={secondaryHref}>
                   {secondaryText}
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
 
               <Button
                 asChild
-                variant="outline"
+                variant="orange"
                 size="sm"
                 onClick={handlePrimaryClick}
-                className="bg-white text-primary hover:bg-white/90"
               >
                 <Link href={primaryHref}>
                   {primaryText}
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
 

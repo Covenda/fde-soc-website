@@ -9,7 +9,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const metadata: Metadata = {
   title: "About Covenda",
-  description: "We build and run AI-SOC operations with Forward-Deployed Security Engineers. Our mission is to make world-class security accessible to every organization.",
+  description:
+    "We build and run AI-SOC operations with Forward-Deployed Security Engineers. Our mission is to make world-class security accessible to every organization.",
 };
 
 export default function AboutPage() {
@@ -29,7 +30,10 @@ export default function AboutPage() {
             <div className="text-center mb-12">
               <h2 className="mb-4">Our mission</h2>
               <p className="text-lg text-muted-foreground">
-                Security operations shouldn't require a team of 50 analysts. With the right platform, process, and embedded expertise, organizations of any size can build and run effective security programs.
+                Security operations shouldn't require a team of 50 analysts.
+                With the right platform, process, and embedded expertise,
+                organizations of any size can build and run effective security
+                programs.
               </p>
             </div>
 
@@ -43,7 +47,9 @@ export default function AboutPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    We measure success by MTTD, MTTR, and coverage—not hours billed or reports delivered. Every engagement has clear SLOs and exit criteria.
+                    We measure success by MTTD, MTTR, and coverage—not hours
+                    billed or reports delivered. Every engagement has clear SLOs
+                    and exit criteria.
                   </p>
                 </CardContent>
               </Card>
@@ -57,7 +63,9 @@ export default function AboutPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    Our Forward-Deployed Engineers join your team, not work around it. Daily standups, shared Slack channels, and joint ownership of outcomes.
+                    Our Forward-Deployed Engineers join your team, not work
+                    around it. Daily standups, shared Slack channels, and joint
+                    ownership of outcomes.
                   </p>
                 </CardContent>
               </Card>
@@ -71,7 +79,9 @@ export default function AboutPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    Clear pricing, defined scope, and measurable deliverables. No surprise fees, no vendor lock-in, no proprietary black boxes.
+                    Clear pricing, defined scope, and measurable deliverables.
+                    No surprise fees, no vendor lock-in, no proprietary black
+                    boxes.
                   </p>
                 </CardContent>
               </Card>
@@ -85,19 +95,33 @@ export default function AboutPage() {
         <Container>
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="mb-4">Built by security engineers, for security engineers</h2>
+              <h2 className="mb-4">
+                Built by security engineers, for security engineers
+              </h2>
               <p className="text-lg text-muted-foreground">
-                Our team has built and operated SOCs at scale for enterprises, startups, and government agencies. We've felt the pain of legacy SIEM platforms, alert fatigue, and understaffed teams.
+                Our team has built and operated SOCs at scale for enterprises,
+                startups, and government agencies. We've felt the pain of legacy
+                SIEM platforms, alert fatigue, and understaffed teams.
               </p>
             </div>
 
             <Card>
               <CardContent className="pt-6">
                 <p className="text-muted-foreground leading-relaxed">
-                  Covenda was founded by security practitioners who saw the same challenges across every organization: too many alerts, not enough context, and no clear path from detection to response. We built the unified risk platform to solve our own problems, and now we're making it available to teams who face the same struggles.
+                  Covenda was founded by security practitioners who saw the same
+                  challenges across every organization: too many alerts, not
+                  enough context, and no clear path from detection to response.
+                  We built the unified risk platform to solve our own problems,
+                  and now we're making it available to teams who face the same
+                  struggles.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mt-4">
-                  Our Forward-Deployed Engineers aren't just consultants—they're seasoned security professionals who have written detection rules at 2 AM, triaged false positives during incident response, and automated runbooks to reduce analyst burnout. When we embed with your team, we bring that hard-won experience.
+                  Our Forward-Deployed Engineers aren't just consultants—they're
+                  seasoned security professionals who have written detection
+                  rules at 2 AM, triaged false positives during incident
+                  response, and automated runbooks to reduce analyst burnout.
+                  When we embed with your team, we bring that hard-won
+                  experience.
                 </p>
               </CardContent>
             </Card>
@@ -111,7 +135,9 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="mb-4">We're hiring Forward-Deployed Engineers</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              If you love building security infrastructure, teaching teams to fish (not just handing them fish), and owning outcomes from code to production, we want to talk to you.
+              If you love building security infrastructure, teaching teams to
+              fish (not just handing them fish), and owning outcomes from code
+              to production, we want to talk to you.
             </p>
 
             <div className="grid gap-6 md:grid-cols-2 text-left mb-12">
@@ -121,10 +147,17 @@ export default function AboutPage() {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>• 3+ years in security engineering or SOC operations</li>
-                    <li>• Experience with SIEM platforms (Sentinel, Splunk, Elastic)</li>
+                    <li>
+                      • 3+ years in security engineering or SOC operations
+                    </li>
+                    <li>
+                      • Experience with SIEM platforms (Sentinel, Splunk,
+                      Elastic)
+                    </li>
                     <li>• Detection engineering (Sigma, KQL, SPL)</li>
-                    <li>• Automation and scripting (Python, PowerShell, Bash)</li>
+                    <li>
+                      • Automation and scripting (Python, PowerShell, Bash)
+                    </li>
                     <li>• Strong communication and teaching skills</li>
                     <li>• Comfortable working embedded with customer teams</li>
                   </ul>
@@ -151,7 +184,7 @@ export default function AboutPage() {
             <Button size="xl" asChild>
               <Link href="/contact">
                 Apply to Join Our Team
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="h-5 w-5" />
               </Link>
             </Button>
           </div>
@@ -164,13 +197,15 @@ export default function AboutPage() {
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="mb-4">Let's build your security program together</h2>
             <p className="text-lg text-muted-foreground mb-10">
-              Whether you're starting from scratch or scaling an existing SOC, we can help. Start with an assessment or dive straight into a Build engagement.
+              Whether you're starting from scratch or scaling an existing SOC,
+              we can help. Start with an assessment or dive straight into a
+              Build engagement.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="xl" asChild>
                 <Link href="/contact">
                   Get Started
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
               <Button size="xl" variant="outline" asChild>
