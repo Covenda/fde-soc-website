@@ -1,0 +1,162 @@
+---
+title: "SOC Automation: Building Runbooks That Actually Work"
+description: "A practical guide to building automated runbooks that reduce analyst toil without creating fragile automation nightmares."
+publishedAt: "2024-10-28"
+author: "Covenda Engineering Team"
+tags: ["automation", "soc", "runbooks", "soar"]
+---
+
+Every SOC leader wants automation. But most automation projects fail because they try to automate everything at once, resulting in brittle workflows that break constantly and erode analyst trust.
+
+Here's how to build runbooks that actually work.
+
+## Start with repetitive, low-risk tasks
+
+Don't try to automate incident response. Start with the boring, repetitive tasks analysts do 50 times a day:
+
+**Good first automation targets**:
+- Enriching alerts with user/asset context
+- Pulling historical activity for a user or host
+- Collecting forensic artifacts (logs, registry keys, running processes)
+- Checking threat intelligence feeds
+- Creating tickets with standardized evidence
+
+**Bad first automation targets**:
+- Isolating hosts from the network
+- Disabling user accounts
+- Deleting files or killing processes
+- Any action that could cause business disruption
+
+## The anatomy of a good runbook
+
+A production-ready runbook has five components:
+
+### 1. Trigger
+What event kicks off this runbook?
+- SIEM alert (e.g., "Suspicious PowerShell execution")
+- Manual analyst action
+- Scheduled job (e.g., daily threat hunt)
+
+### 2. Inputs
+What information does the runbook need?
+- Alert ID
+- Username or hostname
+- Time window to investigate
+- Severity level
+
+### 3. Steps
+Sequential actions the runbook performs:
+```
+1. Query SIEM for related alerts (same user, last 24h)
+2. Pull user context from Active Directory
+3. Check VirusTotal for any file hashes involved
+4. Retrieve endpoint logs from EDR platform
+5. Compile evidence into structured summary
+```
+
+### 4. Outputs
+What does the runbook produce?
+- Enriched ticket in Jira/ServiceNow
+- Summary report (PDF or HTML)
+- Slack notification to SOC channel
+- Updated case notes in SIEM
+
+### 5. Error handling
+What happens when something breaks?
+- API rate limits
+- Missing data (no user found in AD)
+- Timeouts or network failures
+
+Always include a fallback: "If this step fails, notify analyst and continue with partial data."
+
+## Use decision trees, not magic wands
+
+The goal isn't fully autonomous response. It's **augmented decision-making**. Runbooks should present options, not make irreversible choices:
+
+**Instead of**: "Automatically disable user account"
+**Do this**: "Provide analyst with evidence + three response options:
+1. Disable account (explain impact)
+2. Force password reset (lower impact)
+3. Monitor for 24h (gather more evidence)"
+
+Let humans make the final call on disruptive actions.
+
+## Measure runbook effectiveness
+
+Track these metrics for each runbook:
+
+- **Execution count**: How often is it triggered?
+- **Success rate**: How often does it complete without errors?
+- **Time saved**: Compare manual investigation time vs. automated time
+- **Analyst feedback**: Do analysts trust the output?
+
+If a runbook has <80% success rate or negative analyst feedback, iterate or retire it.
+
+## Common pitfalls (and how to avoid them)
+
+### Pitfall 1: Over-reliance on APIs
+Problem: Runbooks break when third-party APIs change or rate-limit you.
+
+Solution: Build graceful degradation. If VirusTotal API fails, skip that step and continue with local analysis.
+
+### Pitfall 2: No version control
+Problem: Someone tweaks a runbook, it breaks, and nobody knows what changed.
+
+Solution: Store runbooks in Git. Require pull requests for changes. Tag production versions.
+
+### Pitfall 3: Forgetting about compliance
+Problem: Your runbook collects PII or accesses sensitive systems without proper logging.
+
+Solution: Audit runbook actions. Log who triggered it, what data was accessed, and when. Ensure compliance with data handling policies.
+
+## Tools of the trade
+
+You don't need a $500K SOAR platform to start. Here's our recommended progression:
+
+**Stage 1: Scripts (Weeks 1-4)**
+- Python scripts analysts run manually
+- Store in Git, document inputs/outputs
+- Validates the logic before investing in automation
+
+**Stage 2: Scheduled jobs (Months 2-3)**
+- Cron jobs or Lambda functions
+- Automated enrichment of high-priority alerts
+- Results written to shared location (S3, SIEM case notes)
+
+**Stage 3: SOAR integration (Months 4+)**
+- Move proven runbooks into SOAR platform
+- Add interactive prompts and approval workflows
+- Scale to more complex use cases
+
+Start simple. Prove value. Then scale.
+
+## Real-world example: Suspicious login runbook
+
+Let's walk through a runbook we built for a fintech client:
+
+**Trigger**: SIEM alert "Impossible travel" (user logged in from two countries <1 hour apart)
+
+**Steps**:
+1. Query SIEM for user's login history (last 30 days)
+2. Pull user details from Okta (MFA status, device trust)
+3. Check if source IPs are known VPN endpoints
+4. Retrieve user's manager from HR system
+5. Check for recent service desk tickets from this user
+
+**Outputs**:
+- Jira ticket with:
+  - Map of login locations
+  - User context (job role, manager, MFA status)
+  - Recommendation: "Likely VPN hopping" or "Investigate further"
+
+**Time saved**: Manual investigation took 15-20 minutes. Runbook completes in <60 seconds.
+
+**Analyst feedback**: "Game changer. I trust the data and can focus on real threats."
+
+## Conclusion
+
+Good runbooks don't replace analysts—they free them from toil so they can focus on complex investigations and proactive threat hunting.
+
+Start small, measure everything, and iterate based on analyst feedback. In 6 months, you'll have a suite of runbooks that actually work.
+
+Need help building automation into your SOC? [Talk to our team](/contact) about embedded Forward-Deployed Engineers.

@@ -1,0 +1,48 @@
+{
+  "title": "SaaS Platform: Supply Chain Security",
+  "slug": "saas-supply-chain",
+  "industry": "Technology",
+  "publishedAt": "2024-09-22",
+  "challenge": "A fast-growing SaaS platform had no visibility into third-party dependencies across 200+ repositories. They experienced a near-miss when a popular npm package they depended on was compromised, and realized they had no process for continuous vulnerability scanning, policy enforcement, or incident response for supply chain attacks.",
+  "approach": "We deployed a 3-engineer FDE pod for 8 weeks focused on supply chain security:\n\n- Implemented GitHub Advanced Security across all repositories\n- Built automated dependency scanning and SBOM generation pipelines\n- Created policy-as-code rules to block high-risk dependencies\n- Developed runbooks for responding to compromised dependencies\n- Integrated alerts into Slack and PagerDuty for real-time response\n- Established quarterly supply chain risk reviews",
+  "outcome": "The engagement delivered comprehensive supply chain visibility:\n\n- 200+ repositories now continuously scanned for vulnerabilities\n- Critical vulnerabilities reduced by 85% through automated patching and policy enforcement\n- Mean Time to Remediate (MTTR) for supply chain issues dropped from weeks to days\n- Security team gained confidence to respond to the next Log4j-style incident\n\nThe platform now has a mature supply chain security program that scales with their rapid growth.",
+  "metrics": [
+    {
+      "label": "Repositories Monitored",
+      "before": "0",
+      "after": "200+",
+      "improvement": "100%"
+    },
+    {
+      "label": "Critical Vulnerabilities",
+      "before": "347",
+      "after": "52",
+      "improvement": "-85%"
+    },
+    {
+      "label": "MTTR for Supply Chain Issues",
+      "before": "14 days",
+      "after": "2 days",
+      "improvement": "-86%"
+    },
+    {
+      "label": "Policy Violations Prevented",
+      "before": "Unknown",
+      "after": "1,200+/year",
+      "improvement": "N/A"
+    }
+  ],
+  "testimonial": {
+    "quote": "We went from zero visibility to comprehensive coverage in 8 weeks. The Covenda team didn't just set up tooling—they taught us how to build a sustainable supply chain security practice.",
+    "author": "Michael Rodriguez",
+    "role": "CISO",
+    "company": "Confidential SaaS Company"
+  },
+  "technologies": [
+    "GitHub Advanced Security",
+    "Dependabot",
+    "SBOM Tools",
+    "Slack",
+    "PagerDuty"
+  ]
+}

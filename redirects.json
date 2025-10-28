@@ -1,0 +1,28 @@
+{
+  "redirects": [
+    {
+      "source": "/case-studies",
+      "destination": "/customers/case-studies",
+      "permanent": true
+    },
+    {
+      "source": "/pricing",
+      "destination": "/pricing/services",
+      "permanent": true
+    },
+    {
+      "source": "/fde",
+      "destination": "/services/fde",
+      "permanent": true
+    },
+    {
+      "source": "/soc",
+      "destination": "/services/ai-soc",
+      "permanent": true
+    }
+  ],
+  "notes": [
+    "Add these redirects to next.config.ts in the redirects() function",
+    "These are suggested URL consolidations based on common patterns"
+  ]
+}

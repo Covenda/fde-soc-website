@@ -1,0 +1,126 @@
+---
+title: "Detection Engineering Best Practices: From Rules to Runbooks"
+description: "Learn how to build production-ready detection rules that your analysts will actually trust, with clear documentation and automated response workflows."
+publishedAt: "2024-11-15"
+author: "Covenda Engineering Team"
+tags: ["detection engineering", "sigma", "automation", "siem"]
+---
+
+Detection engineering is more than writing SIEM queries. It's about building a sustainable program that your team can maintain, trust, and improve over time. After deploying hundreds of detection rules across dozens of organizations, we've learned what works—and what doesn't.
+
+## Start with threat models, not tools
+
+Many teams start detection engineering by asking "What can our SIEM do?" The better question is "What threats matter to our business?" Begin with a threat model:
+
+- Map your critical assets (customer data, intellectual property, infrastructure)
+- Identify realistic attack scenarios (not Hollywood hacking)
+- Prioritize based on likelihood and impact
+- Map scenarios to MITRE ATT&CK techniques
+
+Only then should you ask how to detect those threats with your existing tooling.
+
+## Write detection rules like production code
+
+Treat detection rules with the same rigor as application code:
+
+- **Version control**: Store rules in Git, not spreadsheets
+- **Code review**: Every rule should be reviewed by a peer
+- **Testing**: Write test cases with sample logs (both true positives and false positives)
+- **Documentation**: Explain the "why" not just the "what"
+
+Here's a template we use for Sigma rules:
+
+```yaml
+title: Suspicious PowerShell Execution
+id: abc123-xyz789
+status: production
+description: Detects PowerShell executing with suspicious flags often used by attackers
+author: Your Name
+date: 2024-11-15
+tags:
+  - attack.execution
+  - attack.t1059.001
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4688
+    ProcessCommandLine|contains:
+      - '-NoProfile'
+      - '-ExecutionPolicy Bypass'
+      - '-EncodedCommand'
+  condition: selection
+falsepositives:
+  - Legitimate admin scripts (should use signed scripts instead)
+  - Some deployment tools
+level: high
+```
+
+## Document your false positives
+
+Every high-fidelity detection starts as a noisy mess. The difference between good and great detection engineering is systematic false positive documentation:
+
+- Log every FP you investigate
+- Categorize them (IT operations, developer tools, legitimate admin activity)
+- Create tuning rules or allowlists with clear expiration dates
+- Review FP categories quarterly—patterns emerge
+
+We maintain a "false positive journal" in Notion/Confluence that answers:
+- What caused the FP?
+- Why is it benign?
+- How did we tune it?
+- When should we revisit this decision?
+
+## Automate investigation, not just alerting
+
+Detection rules that only create tickets are half-finished. Build runbooks that automatically gather evidence:
+
+1. **Enrichment**: Pull user context, asset inventory, historical behavior
+2. **Triage questions**: What was the parent process? What network connections were made?
+3. **Response options**: Isolate host? Disable account? Escalate to IR team?
+
+Use your SOAR platform (or simple Python scripts) to answer the first 5 questions an analyst would ask.
+
+## Measure what matters
+
+Track these metrics to assess detection health:
+
+- **True Positive Rate**: How often do alerts represent real threats?
+- **Mean Time to Triage (MTTT)**: How long until an analyst reviews the alert?
+- **Coverage**: What % of MITRE ATT&CK techniques can you detect?
+- **Alert Volume**: Are analysts drowning in noise?
+
+Aim for <20% false positive rate and <1 hour MTTT for high-severity alerts.
+
+## When to use Sigma vs. native queries
+
+Sigma rules are portable and reusable, but they have limitations:
+
+**Use Sigma when**:
+- You need cross-platform compatibility
+- Building a detection library for multiple clients
+- Sharing rules with the community
+
+**Use native queries when**:
+- You need advanced platform features (machine learning, joins, lookups)
+- Performance optimization is critical
+- The logic is highly specific to your environment
+
+We typically start with Sigma for foundational detections, then translate to native queries when we need advanced features.
+
+## Continuous improvement: The 30-60-90 review cycle
+
+Detection engineering isn't "set and forget." Schedule regular reviews:
+
+- **30 days**: Review all new detections for FP rate and tuning needs
+- **60 days**: Analyze alert volume trends and analyst feedback
+- **90 days**: Revisit threat models and identify coverage gaps
+
+This cadence keeps your detection program fresh without overwhelming your team.
+
+## Conclusion
+
+Great detection engineering balances art and science. Start with clear threat models, write rules like code, document relentlessly, and automate the boring parts. Your analysts will thank you.
+
+Want help building a detection engineering program? [Contact us](/contact) to discuss how our Forward-Deployed Engineers can embed with your team.
