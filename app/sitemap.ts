@@ -2,6 +2,8 @@ import { MetadataRoute } from "next";
 import { getBlogPosts } from "@/lib/mdx";
 import { getAllCaseStudySlugs } from "@/lib/case-studies";
 
+export const dynamic = "force-static";
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://covenda.ai";
 

@@ -16,7 +16,12 @@ interface HeroProps {
   };
 }
 
-export function Hero({ title, description, primaryCta, secondaryCta }: HeroProps) {
+export function Hero({
+  title,
+  description,
+  primaryCta,
+  secondaryCta,
+}: HeroProps) {
   return (
     <div className="relative isolate overflow-hidden bg-gradient-to-b from-primary/5 via-background to-background">
       <Container>
@@ -37,7 +42,7 @@ export function Hero({ title, description, primaryCta, secondaryCta }: HeroProps
                   </Button>
                 )}
                 {secondaryCta && (
-                  <Button size="lg" variant="outline" asChild>
+                  <Button size="lg" variant="orange" asChild>
                     <Link href={secondaryCta.href}>{secondaryCta.text}</Link>
                   </Button>
                 )}

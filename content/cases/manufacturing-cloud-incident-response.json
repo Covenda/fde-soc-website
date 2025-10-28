@@ -1,0 +1,51 @@
+{
+  "title": "Manufacturing: Cloud Incident Response Transformation",
+  "slug": "manufacturing-cloud-incident-response",
+  "industry": "Manufacturing",
+  "publishedAt": "2024-12-05",
+  "challenge": "A global manufacturing company with operations across 15 countries had migrated 70% of their infrastructure to AWS and Azure over 18 months. However, their incident response capabilities hadn't evolved. When a cryptomining attack hit their AWS environment, it took 14 hours to detect and 3 days to fully contain. The IR team struggled with ephemeral cloud resources—logs disappeared before they could be collected, and manual forensics was impossible in auto-scaling environments. They had no cloud-specific playbooks, no automated evidence collection, and investigators were still using legacy on-prem tools. The incident cost them $180,000 in compute overages and exposed serious gaps in their security program.",
+  "approach": "We embedded a 2-engineer FDE pod for an 8-week cloud IR modernization engagement:\n\n**Weeks 1-3 (Cloud Forensics Foundation):**\n- Implemented automated evidence collection using AWS Systems Manager and Azure Automation\n- Configured cloud-native logging pipelines to centralized S3/Blob storage with immutability and retention policies\n- Built forensic snapshots automation for EC2/VM instances triggered by security alerts\n- Deployed GuardDuty, Security Hub, and Azure Defender with customized alert routing\n\n**Weeks 4-6 (Incident Response Playbooks):**\n- Created 8 cloud-specific IR playbooks (cryptomining, credential compromise, data exfiltration, ransomware, misconfigured S3 buckets, IAM privilege escalation)\n- Automated containment actions: isolate instances, revoke IAM credentials, quarantine S3 buckets, block malicious IPs\n- Built investigation workflows that automatically collect: CloudTrail logs, VPC Flow Logs, EBS snapshots, memory dumps, network traffic captures\n- Integrated with PagerDuty for on-call escalations and StatusPage for internal communications\n\n**Weeks 7-8 (Testing & Training):**\n- Ran tabletop exercises for each playbook with the IR team\n- Executed purple team exercises simulating attacks in non-prod environments\n- Documented response procedures and decision trees\n- Trained 12 security engineers on cloud forensics and IR automation",
+  "outcome": "The company went from reactive firefighting to proactive readiness:\n\n- Mean Time to Detect for cloud incidents dropped from 14 hours to 8 minutes with automated monitoring\n- Mean Time to Contain decreased from 3 days to 35 minutes with automated containment actions\n- Forensic evidence collection became 100% automated—no more lost logs from terminated instances\n- The IR team successfully responded to 4 incidents in the next 3 months with zero data loss\n- Compute cost anomalies are now detected within 5 minutes, preventing another cryptomining incident that would have cost $220,000\n\nThree months post-engagement, they detected a credential stuffing attack against their Azure environment. The automated playbook isolated the compromised VM, collected forensics, rotated credentials, and alerted the IR team—all within 12 minutes. The CISO commented: 'This would have been a multi-day incident before Covenda. Now it's handled before I finish my coffee.'",
+  "metrics": [
+    {
+      "label": "Mean Time to Detect (Cloud)",
+      "before": "14 hours",
+      "after": "8 minutes",
+      "improvement": "-99%"
+    },
+    {
+      "label": "Mean Time to Contain",
+      "before": "3 days",
+      "after": "35 minutes",
+      "improvement": "-98%"
+    },
+    {
+      "label": "Evidence Collection Success",
+      "before": "45% (logs often lost)",
+      "after": "100% automated",
+      "improvement": "+122%"
+    },
+    {
+      "label": "Incident Response Readiness",
+      "before": "No cloud playbooks",
+      "after": "8 automated playbooks",
+      "improvement": "100% coverage"
+    }
+  ],
+  "testimonial": {
+    "quote": "The cryptomining incident was our wake-up call. Covenda didn't just patch the problem—they built us a modern cloud IR capability. We went from feeling helpless in the cloud to having faster response times than our on-prem environment.",
+    "author": "Jennifer Okoro",
+    "role": "CISO",
+    "company": "Confidential Manufacturing Firm"
+  },
+  "technologies": [
+    "AWS GuardDuty",
+    "AWS Security Hub",
+    "Azure Defender",
+    "Azure Sentinel",
+    "AWS Systems Manager",
+    "Terraform",
+    "PagerDuty",
+    "Velociraptor"
+  ]
+}

@@ -84,7 +84,7 @@ export function StickyCTA({
             <div className="flex items-center gap-3 ml-auto">
               <Button
                 asChild
-                variant="secondary"
+                variant="orange"
                 size="sm"
                 onClick={handleSecondaryClick}
                 className="hidden sm:inline-flex"
