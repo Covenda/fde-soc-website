@@ -19,13 +19,14 @@ This guide helps you identify and track the metrics that actually matter.
 Common security metrics often measure activity, not outcomes:
 
 **Vanity metrics:**
+
 - Logs collected per day
 - Number of security tools deployed
 - Vulnerabilities scanned
 - Security training completion rate
 - Incidents responded to
 
-These metrics measure that you're doing *something*, but not whether you're doing the *right things* or if those things are *effective*.
+These metrics measure that you're doing _something_, but not whether you're doing the _right things_ or if those things are _effective_.
 
 **The test**: Can an attacker succeed despite good performance on these metrics? If yes, they're vanity metrics.
 
@@ -41,11 +42,12 @@ These communicate business risk and security program effectiveness to non-techni
 
 **1. Security Incident Financial Impact**
 
-*What it measures*: The actual cost of security incidents to the business.
+_What it measures_: The actual cost of security incidents to the business.
 
-*Why it matters*: Executives understand dollars. This metric directly connects security program effectiveness to business outcomes.
+_Why it matters_: Executives understand dollars. This metric directly connects security program effectiveness to business outcomes.
 
-*How to calculate*:
+_How to calculate_:
+
 ```
 Total Incident Cost =
   Direct costs (forensics, legal, notification, credit monitoring)
@@ -54,7 +56,8 @@ Total Incident Cost =
   + Regulatory fines and penalties
 ```
 
-*Example*:
+_Example_:
+
 - Q1 2024: $45,000 (phishing incident, 3 compromised accounts, 8 hours response)
 - Q2 2024: $12,000 (malware detected and blocked before spread)
 - Q3 2024: $8,000 (failed intrusion attempt, no data loss)
@@ -64,11 +67,12 @@ Trend: 89% reduction in incident costs year-over-year.
 
 **2. Mean Time to Detect (MTTD) & Mean Time to Respond (MTTR)**
 
-*What it measures*: How quickly you find and stop attacks.
+_What it measures_: How quickly you find and stop attacks.
 
-*Why it matters*: IBM's Cost of a Data Breach Report shows breaches contained in <200 days cost $3.93M vs $4.76M for >200 days. Speed matters.
+_Why it matters_: IBM's Cost of a Data Breach Report shows breaches contained in &lt;200 days cost $3.93M vs $4.76M for &gt;200 days. Speed matters.
 
-*How to calculate*:
+_How to calculate_:
+
 ```
 MTTD = Time from initial compromise to detection
 MTTR = Time from detection to containment
@@ -76,7 +80,8 @@ MTTR = Time from detection to containment
 Both measured in hours/days, segmented by severity tier.
 ```
 
-*Example dashboard*:
+_Example dashboard_:
+
 ```
 Critical Severity Incidents:
 - MTTD: 2.3 hours (down from 14 hours last quarter)
@@ -89,11 +94,11 @@ High Severity Incidents:
 
 **3. Security Control Effectiveness**
 
-*What it measures*: Are your security controls actually stopping threats?
+_What it measures_: Are your security controls actually stopping threats?
 
-*Why it matters*: Shows ROI on security investments. A control that never detects threats might be misconfigured, have coverage gaps, or provide false comfort.
+_Why it matters_: Shows ROI on security investments. A control that never detects threats might be misconfigured, have coverage gaps, or provide false comfort.
 
-*How to calculate*:
+_How to calculate_:
 
 Track "prevented attacks" vs "successful attacks" by control layer:
 
@@ -116,11 +121,12 @@ Response Layer:
 
 **4. Cyber Insurance Premium & Coverage**
 
-*What it measures*: Third-party assessment of your security posture.
+_What it measures_: Third-party assessment of your security posture.
 
-*Why it matters*: Insurance underwriters assess your actual risk. If premiums decrease or coverage increases, your security is improving in ways that matter to risk professionals.
+_Why it matters_: Insurance underwriters assess your actual risk. If premiums decrease or coverage increases, your security is improving in ways that matter to risk professionals.
 
-*Track*:
+_Track_:
+
 - Annual premium costs
 - Coverage limits and exclusions
 - Deductibles
@@ -134,11 +140,11 @@ These help security leaders manage the program and make resourcing decisions.
 
 **1. Detection Coverage (MITRE ATT&CK)**
 
-*What it measures*: Percentage of relevant attack techniques you can detect.
+_What it measures_: Percentage of relevant attack techniques you can detect.
 
-*Why it matters*: Shows coverage gaps and helps prioritize detection engineering efforts.
+_Why it matters_: Shows coverage gaps and helps prioritize detection engineering efforts.
 
-*How to calculate*:
+_How to calculate_:
 
 Map your detections to MITRE ATT&CK framework:
 
@@ -160,15 +166,15 @@ Overall Coverage: 82% (101/123 relevant techniques)
 Target: 90% by Q2 2025
 ```
 
-Focus on techniques relevant to *your* environment—don't worry about detecting attacks against systems you don't use.
+Focus on techniques relevant to _your_ environment—don't worry about detecting attacks against systems you don't use.
 
 **2. Mean Time to Patch (MTTP) Critical Vulnerabilities**
 
-*What it measures*: How quickly you patch actively exploited or critical vulnerabilities.
+_What it measures_: How quickly you patch actively exploited or critical vulnerabilities.
 
-*Why it matters*: Unpatched critical vulnerabilities are attacker entry points. Speed of patching reduces exposure window.
+_Why it matters_: Unpatched critical vulnerabilities are attacker entry points. Speed of patching reduces exposure window.
 
-*How to calculate*:
+_How to calculate_:
 
 ```
 MTTP = Average days from CVE publication (or vulnerability scan finding) to patch deployment
@@ -189,11 +195,12 @@ Track exceptions: How many systems missed SLA and why?
 
 **3. Security Debt**
 
-*What it measures*: Accumulated technical debt that increases security risk.
+_What it measures_: Accumulated technical debt that increases security risk.
 
-*Why it matters*: Like financial debt, security debt accumulates interest. Track it to justify remediation projects.
+_Why it matters_: Like financial debt, security debt accumulates interest. Track it to justify remediation projects.
 
-*Examples*:
+_Examples_:
+
 ```
 Security Debt Inventory:
 - Legacy applications without MFA: 12 apps (down from 40 last quarter)
@@ -204,18 +211,19 @@ Security Debt Inventory:
 - Public-facing assets without WAF: 3 applications (2 being migrated to cloud)
 
 Total Security Debt Score: 85 (down from 190 last quarter)
-Target: <50 by end of year
+Target: &lt;50 by end of year
 ```
 
 Assign point values based on risk and track reduction over time.
 
 **4. SOC Analyst Efficiency**
 
-*What it measures*: How effectively your SOC operates.
+_What it measures_: How effectively your SOC operates.
 
-*Why it matters*: Burned-out analysts miss threats. Measure operational health to prevent alert fatigue and turnover.
+_Why it matters_: Burned-out analysts miss threats. Measure operational health to prevent alert fatigue and turnover.
 
-*Track*:
+_Track_:
+
 ```
 Alert Quality:
 - Daily alert volume: 180 (down from 2,000)
@@ -242,9 +250,9 @@ These drive day-to-day security operations.
 
 **1. Phishing Test Results**
 
-*What it measures*: User susceptibility to social engineering.
+_What it measures_: User susceptibility to social engineering.
 
-*Why it matters*: Users are a critical control layer. Track effectiveness of security awareness.
+_Why it matters_: Users are a critical control layer. Track effectiveness of security awareness.
 
 ```
 Quarterly Phishing Simulation Results:
@@ -254,16 +262,17 @@ Quarterly Phishing Simulation Results:
 - User reports: 45 users reported email as suspicious (up from 12)
 
 Improvement: 64% reduction in successful phishing
-Target: <5% click rate, >30% user reporting rate
+Target: &lt;5% click rate, &gt;30% user reporting rate
 ```
 
 **2. Vulnerability Exposure Window**
 
-*What it measures*: Days between vulnerability discovery and remediation.
+_What it measures_: Days between vulnerability discovery and remediation.
 
-*Why it matters*: Smaller window = less time for attackers to exploit.
+_Why it matters_: Smaller window = less time for attackers to exploit.
 
 Track:
+
 - Mean exposure window (days)
 - Median exposure window (days)
 - 90th percentile exposure window (days)
@@ -271,20 +280,22 @@ Track:
 
 **3. Access Review Completion**
 
-*What it measures*: Timeliness of periodic access reviews and privilege recertification.
+_What it measures_: Timeliness of periodic access reviews and privilege recertification.
 
-*Why it matters*: Privilege creep leads to excessive access. Regular reviews limit blast radius.
+_Why it matters_: Privilege creep leads to excessive access. Regular reviews limit blast radius.
 
 Track:
+
 - % of access reviews completed on time
 - % of reviews resulting in access revocation
 - Average time to remediate revoked access
 
 **4. Security Tool Coverage**
 
-*What it measures*: Percentage of assets with security controls deployed.
+_What it measures_: Percentage of assets with security controls deployed.
 
 Track:
+
 ```
 Asset Coverage:
 - EDR deployed: 98% of endpoints (target: 99%)
@@ -297,22 +308,27 @@ Asset Coverage:
 ## Metrics to avoid (or reframe)
 
 **"Number of vulnerabilities found"**
+
 - Why it's misleading: More vulnerabilities might mean better scanning, not worse security
 - Reframe as: Mean time to remediate critical vulnerabilities
 
 **"Logs collected per day"**
+
 - Why it's misleading: Volume doesn't equal visibility
 - Reframe as: % of critical systems with adequate logging + MTTD
 
 **"Security tools deployed"**
+
 - Why it's misleading: More tools ≠ more secure
 - Reframe as: Control effectiveness rate by security layer
 
 **"Security training completion rate"**
+
 - Why it's misleading: Completion ≠ behavior change
 - Reframe as: Phishing simulation click rate + user-reported suspicious emails
 
 **"Number of incidents responded to"**
+
 - Why it's misleading: More incidents might mean better detection, not more attacks
 - Reframe as: Incident financial impact + MTTD/MTTR trends
 
@@ -327,6 +343,7 @@ Asset Coverage:
 **4. Set realistic targets:** Aim for continuous improvement, not perfection. 10-20% improvement per quarter is excellent.
 
 **5. Review regularly:**
+
 - Weekly: Operational metrics with SOC team
 - Monthly: Security leadership metrics with security managers
 - Quarterly: Executive metrics with leadership and board

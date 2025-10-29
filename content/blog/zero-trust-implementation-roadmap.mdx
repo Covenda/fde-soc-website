@@ -17,33 +17,38 @@ This guide shares our practical roadmap for enterprise Zero Trust adoption.
 Before diving into implementation, let's clarify what Zero Trust actually means. It's not a buzzword or marketing term—it's a security model based on these core principles:
 
 **1. Never trust, always verify**
+
 - No implicit trust based on network location
 - Verify explicitly using all available data points
 - Authentication and authorization for every access request
 
 **2. Assume breach**
+
 - Minimize blast radius with microsegmentation
 - Verify end-to-end encryption
 - Use analytics to detect anomalies
 
 **3. Least privilege access**
+
 - Limit user access with just-enough, just-in-time (JIT) access
 - Risk-based adaptive policies
 - Verify before granting access
 
-The NIST SP 800-207 definition: *"Zero trust provides a collection of concepts and ideas designed to minimize uncertainty in enforcing accurate, least privilege per-request access decisions in information systems and services in the face of a network viewed as compromised."*
+The NIST SP 800-207 definition: _"Zero trust provides a collection of concepts and ideas designed to minimize uncertainty in enforcing accurate, least privilege per-request access decisions in information systems and services in the face of a network viewed as compromised."_
 
 Translation: Don't trust anything by default. Verify everything. Limit access to the minimum necessary. Assume attackers are already inside.
 
 ## Why traditional perimeter security fails
 
 The "castle and moat" model assumes:
+
 - Clear network boundaries
 - Trusted internal network
 - Users work from offices
 - Applications run in datacenters
 
 Modern reality:
+
 - Cloud infrastructure blurs boundaries
 - Remote/hybrid workforce
 - Contractors, vendors, partners need access
@@ -58,31 +63,37 @@ A credential compromise in a perimeter model = game over. The attacker has "trus
 Before planning your Zero Trust journey, assess current maturity. Use the CISA Zero Trust Maturity Model with these dimensions:
 
 **1. Identity:**
+
 - Do you have centralized identity provider (IdP)?
 - Is MFA enforced for all users?
 - Is access risk-based (device posture, location, behavior)?
 
 **2. Device:**
+
 - Do you have device inventory and health monitoring?
 - Can you enforce device compliance policies?
 - Are corporate vs. personal devices distinguished?
 
 **3. Network:**
+
 - Do you have microsegmentation or flat networks?
 - Is all traffic inspected and logged?
 - Can you enforce application-level access?
 
 **4. Application:**
+
 - Do applications use modern authentication (SAML, OAuth, OIDC)?
 - Is access granted at application level or network level?
 - Can you enforce authorization policies per application?
 
 **5. Data:**
+
 - Do you have data classification?
 - Is sensitive data encrypted in transit and at rest?
 - Can you enforce data loss prevention (DLP)?
 
 **6. Visibility & Analytics:**
+
 - Do you have centralized logging and SIEM?
 - Can you detect anomalous behavior?
 - Do you have security metrics and dashboards?
@@ -98,6 +109,7 @@ Here's our proven phased approach:
 Before implementing Zero Trust controls, establish foundations:
 
 **1. Inventory everything:**
+
 - All users (employees, contractors, service accounts)
 - All devices (laptops, phones, servers, IoT)
 - All applications (SaaS, on-prem, legacy, modern)
@@ -106,6 +118,7 @@ Before implementing Zero Trust controls, establish foundations:
 Use automated discovery tools—manual inventories are incomplete within days.
 
 **2. Map current network flows:**
+
 - What talks to what?
 - Which users access which applications?
 - What protocols and ports are used?
@@ -114,11 +127,13 @@ Use automated discovery tools—manual inventories are incomplete within days.
 Use network flow analysis, application dependency mapping, and CASB data.
 
 **3. Define risk-based segmentation:**
+
 - Identify "crown jewels" (customer data, financial systems, IP, credentials)
 - Map access requirements for each asset
 - Define trust boundaries
 
 **4. Establish baseline metrics:**
+
 - How many privileged accounts exist?
 - What's average time to detect/respond to threats?
 - How many legacy applications lack modern authentication?
@@ -133,6 +148,7 @@ Identity is the foundation of Zero Trust. Start here.
 Choose an enterprise IdP: Okta, Azure AD, Ping Identity, or similar.
 
 Migrate authentication to centralized IdP:
+
 - Start with SaaS applications (easiest—usually SAML/OIDC ready)
 - Move to modern web applications
 - Tackle legacy applications last (may need proxy or wrapper)
@@ -140,6 +156,7 @@ Migrate authentication to centralized IdP:
 **2. Enforce multi-factor authentication (MFA) everywhere:**
 
 Rollout plan:
+
 - Week 1-2: IT/Security teams (test and learn)
 - Week 3-4: Executives and privileged users
 - Week 5-8: All employees
@@ -152,6 +169,7 @@ Use phishing-resistant MFA where possible (FIDO2, WebAuthn, smart cards) instead
 Deploy PAM solution: CyberArk, BeyondTrust, Delinea, etc.
 
 Migrate privileged accounts:
+
 - Administrator credentials
 - Service accounts
 - Break-glass accounts
@@ -162,6 +180,7 @@ Enable just-in-time (JIT) access: No standing privileged access. Users request, 
 **4. Deploy endpoint security and device trust:**
 
 Requirements:
+
 - Endpoint Detection and Response (EDR) on all devices
 - Device compliance policies (OS version, encryption, patches)
 - Corporate vs. personal device distinction
@@ -177,12 +196,14 @@ Move from flat networks to segmented, application-aware access.
 Replace legacy VPN with ZTNA: Zscaler Private Access, Cloudflare Access, Palo Alto Prisma Access, etc.
 
 Benefits over VPN:
+
 - Application-level access (not network-level)
 - Identity and device verification for each session
 - No "inside the network" concept
 - Better user experience (no VPN client issues)
 
 Migration approach:
+
 - Deploy ZTNA alongside VPN
 - Migrate non-critical applications first
 - Gather user feedback and iterate
@@ -194,6 +215,7 @@ Migration approach:
 For on-prem and cloud infrastructure, implement microsegmentation: Illumio, VMware NSX, Cisco ACI, native cloud security groups.
 
 Process:
+
 1. **Visibility first**: Map all traffic flows for 30 days—don't block anything yet
 2. **Define zones**: Segment by sensitivity (PCI environment, production, development, DMZ)
 3. **Create policies**: Define allowed communications between zones
@@ -206,6 +228,7 @@ Start with crown jewels—segment most sensitive assets first.
 **3. Deploy inline security inspection:**
 
 All traffic (even internal) should be inspected:
+
 - TLS inspection (with proper privacy controls)
 - IDS/IPS for known threats
 - Behavioral analytics for anomalies
@@ -220,6 +243,7 @@ Apply Zero Trust principles to applications and data.
 Move from "can this user access the network?" to "can this user perform this action in this application?"
 
 Modern approach:
+
 - Deploy API gateway / service mesh
 - Implement attribute-based access control (ABAC) or relationship-based access control (ReBAC)
 - Enforce fine-grained permissions per API endpoint
@@ -229,12 +253,14 @@ Example: Instead of "Bob can access HR system," enforce "Bob can view employee r
 **2. Classify and protect sensitive data:**
 
 Deploy data security tools:
+
 - Data classification (manual + automated)
 - Data loss prevention (DLP) for email, web, endpoints
 - Cloud Access Security Broker (CASB) for SaaS applications
 - Encryption for data at rest and in transit
 
 Policies:
+
 - Block unencrypted transfers of sensitive data
 - Alert on bulk downloads of confidential information
 - Require MFA + manager approval for accessing highly sensitive data
@@ -244,21 +270,25 @@ Policies:
 Many enterprises have legacy applications that can't do modern authentication. Options:
 
 **Option A: Application proxy**
+
 - Deploy identity-aware proxy (IAP) in front of application
 - Proxy handles authentication with IdP
 - Passes identity claims to backend application
 - Examples: Cloudflare Access, Pomerium, Google IAP
 
 **Option B: Authentication wrapper**
+
 - Modify application to support SAML/OIDC (if source available)
 - Use plugins or modules for common platforms (Apache, IIS, Tomcat)
 
 **Option C: Network-based access**
+
 - Use ZTNA to provide network access only after authentication
 - Not as strong as application-level auth, but better than legacy VPN
 - Combine with microsegmentation to limit blast radius
 
 **Option D: Retire or replace**
+
 - Some legacy applications may not be worth the effort
 - Business case for replacing with modern SaaS or rebuilding
 
@@ -269,12 +299,14 @@ Zero Trust requires continuous verification—implementation is never "done."
 **1. Deploy User and Entity Behavior Analytics (UEBA):**
 
 Establish behavioral baselines:
+
 - Normal work hours and locations for users
 - Typical data access patterns
 - Expected device usage
 - Usual lateral movement (which systems a user/service normally accesses)
 
 Alert on anomalies:
+
 - Access from impossible travel locations
 - Unusual data download volumes
 - Access to systems outside normal scope
@@ -283,6 +315,7 @@ Alert on anomalies:
 **2. Implement security automation and orchestration (SOAR):**
 
 Automate response to common scenarios:
+
 - Compromised credentials: Revoke sessions, force password reset, alert user and security team
 - Suspicious device: Quarantine, require re-verification, trigger forensics
 - Anomalous access attempt: Challenge with step-up authentication, alert SOC
@@ -291,6 +324,7 @@ Automate response to common scenarios:
 **3. Measure and report on Zero Trust maturity:**
 
 Track metrics:
+
 - % of applications with application-level access control
 - % of users with MFA enabled
 - % of network microsegmented
@@ -329,10 +363,12 @@ A regional investment firm (customer case study) implemented Zero Trust after a 
 **Timeline: 16 weeks**
 
 **Phase 1 (weeks 1-4): Foundation**
+
 - Asset inventory and network flow mapping
 - Risk assessment and segmentation design
 
 **Phase 2 (weeks 5-10): Identity & Access**
+
 - Deployed Okta as centralized IdP
 - Migrated 80 applications to SAML/OAuth
 - Built custom authentication wrappers for 40 legacy apps
@@ -340,16 +376,19 @@ A regional investment firm (customer case study) implemented Zero Trust after a 
 - Implemented CyberArk PAM for privileged access with JIT
 
 **Phase 3 (weeks 11-14): Network & Microsegmentation**
+
 - Deployed Zscaler Private Access to replace VPN
 - Implemented Illumio microsegmentation for trading systems and client data environments
 - Deployed continuous monitoring with risk scoring
 
 **Phase 4 (weeks 15-16): Validation**
+
 - Penetration testing
 - Tabletop exercises
 - Training and documentation
 
 **Results:**
+
 - Eliminated lateral movement risk (subsequent phishing tests showed attackers couldn't move beyond initial endpoint)
 - Reduced privileged access standing permissions by 94%
 - 100% MFA adoption

@@ -28,16 +28,20 @@ Are you running ICS/SCADA systems? If not, you don't need detections for Modbus 
 Instead of treating ATT&CK as a checklist, use it as a framework to map realistic threats:
 
 ### Step 1: Identify your adversaries
+
 Who actually targets organizations like yours?
+
 - Ransomware gangs (everyone)
 - Nation-state APTs (if you're critical infrastructure, defense, or high-value IP)
 - Insiders (financial services, healthcare)
 - Opportunistic attackers (exposed infrastructure)
 
 ### Step 2: Map their typical kill chains
+
 What techniques do they commonly use?
 
 Example: Ransomware kill chain
+
 ```
 Initial Access → T1566.001 (Phishing: Attachment)
 Execution → T1059.001 (PowerShell)
@@ -51,9 +55,11 @@ Impact → T1486 (Data Encrypted for Impact)
 That's 7 techniques. Build high-fidelity detections for these before worrying about obscure nation-state techniques.
 
 ### Step 3: Layer your detections
+
 Don't rely on a single detection per technique. Build multiple layers:
 
 **Example: Detecting T1059.001 (PowerShell abuse)**
+
 - Layer 1: PowerShell with suspicious flags (`-EncodedCommand`, `-NoProfile`)
 - Layer 2: PowerShell spawned by unusual parent processes (e.g., Excel, Outlook)
 - Layer 3: PowerShell making external network connections
@@ -66,6 +72,7 @@ Multiple layers = higher chance of detection, even if attacker evades one layer.
 Not all techniques are equally important. Categorize by:
 
 ### Critical (must detect)
+
 - Initial Access (phishing, exploit public-facing apps)
 - Credential Access (dumping LSASS, password spraying)
 - Lateral Movement (RDP, PsExec, WMI)
@@ -74,6 +81,7 @@ Not all techniques are equally important. Categorize by:
 These are high-signal, high-impact techniques. False positives are acceptable if it means catching these.
 
 ### Important (should detect)
+
 - Execution (suspicious scripting, macro execution)
 - Persistence (scheduled tasks, startup items)
 - Defense Evasion (clearing logs, disabling AV)
@@ -81,6 +89,7 @@ These are high-signal, high-impact techniques. False positives are acceptable if
 These indicate active compromise. Invest in tuning to reduce false positives.
 
 ### Nice-to-have (can wait)
+
 - Discovery (network scans, user enumeration)
 - Collection (screen capture, clipboard data)
 - Exfiltration (unusual outbound traffic)
@@ -92,17 +101,23 @@ These are often noisy and context-dependent. Build detections after covering the
 Instead of "% of ATT&CK techniques covered," track:
 
 ### Detection depth
+
 How many layers of detection do you have per critical technique?
+
 - Goal: 3+ layers for critical techniques
 - Goal: 2+ layers for important techniques
 
 ### True positive rate
+
 What % of your alerts represent real threats?
-- Goal: >80% TP rate for critical techniques
-- Goal: >50% TP rate for important techniques
+
+- Goal: &gt;80% TP rate for critical techniques
+- Goal: &gt;50% TP rate for important techniques
 
 ### Validation cadence
+
 How often do you test your detections?
+
 - Goal: Red team exercises quarterly
 - Goal: Purple team detection validation monthly
 - Goal: Continuous testing via attack simulation tools
@@ -110,11 +125,13 @@ How often do you test your detections?
 ## Tools for tracking coverage
 
 ### Open-source options
+
 - **ATT&CK Navigator**: Visualize your coverage as a heatmap
 - **DeTT&CT**: Score detection quality, not just presence
 - **Atomic Red Team**: Run real attacks to validate detections
 
 ### Commercial options
+
 - **AttackIQ**: Continuous security validation
 - **SafeBreach**: Automated breach simulation
 - **Cymulate**: Full kill chain simulation
@@ -129,6 +146,7 @@ Here's what realistic coverage looks like for a mid-sized fintech:
 **Relevant to environment**: 82 (42%)
 **Covered with high-fidelity detections**: 45 (55% of relevant)
 **Coverage breakdown**:
+
 - Critical techniques: 28/28 (100%)
 - Important techniques: 12/34 (35%)
 - Nice-to-have techniques: 5/20 (25%)

@@ -15,6 +15,7 @@ After building cloud IR capabilities for dozens of organizations, here's our fra
 ## Why traditional IR fails in the cloud
 
 Traditional incident response assumes:
+
 - **Persistent infrastructure**: Servers stay online for forensics
 - **Physical access**: You can pull disk images and memory dumps
 - **Network boundaries**: Clear perimeter to monitor and block
@@ -23,17 +24,20 @@ Traditional incident response assumes:
 Cloud environments break all these assumptions:
 
 **Ephemeral resources** mean evidence disappears:
+
 - Auto-scaling terminates compromised instances
 - Container pods restart and lose file system state
 - Lambda functions execute and vanish in seconds
 - Spot instances disappear with no warning
 
 **API-first operations** require programmatic response:
+
 - Manual console clicking is too slow for cloud-speed attacks
 - Isolation requires API calls, not network cables
 - Forensics happens via cloud APIs, not physical access
 
 **Distributed architecture** complicates containment:
+
 - Attacks span multiple regions, accounts, and cloud providers
 - Microservices architecture means lateral movement happens at API layer
 - Serverless functions can be attack vectors with no "host" to investigate
@@ -49,7 +53,7 @@ Define the specific security events that trigger the playbook:
 ```yaml
 Playbook: AWS EC2 Cryptomining Response
 Trigger Conditions:
-  - CloudWatch Alarm: EC2 CPU utilization >95% for >10 minutes
+  - CloudWatch Alarm: EC2 CPU utilization &gt;95% for &gt;10 minutes
   - GuardDuty Finding: CryptoCurrency:EC2/BitcoinTool.B!DNS
   - Security Hub: Unusual outbound traffic to known mining pools
   - Cost anomaly: Sudden spike in EC2 compute spend
@@ -65,7 +69,7 @@ Before taking any containment actions, preserve evidence. In the cloud, this mus
 def collect_ec2_evidence(instance_id, region):
     """
     Automated evidence collection for EC2 instance
-    Must complete in <5 minutes before auto-scaling terminates instance
+    Must complete in &lt;5 minutes before auto-scaling terminates instance
     """
     evidence = {
         'instance_id': instance_id,
@@ -144,6 +148,7 @@ def collect_ec2_evidence(instance_id, region):
 **Key evidence to collect automatically:**
 
 **For compute (EC2, VMs):**
+
 - Disk snapshots/images
 - Memory dumps (if agent available)
 - Process lists and network connections
@@ -151,12 +156,14 @@ def collect_ec2_evidence(instance_id, region):
 - User accounts and cron jobs
 
 **For cloud-native logs:**
+
 - CloudTrail / Azure Activity Logs / GCP Cloud Audit Logs (IAM changes, API calls)
 - VPC Flow Logs / NSG Flow Logs (network traffic)
 - DNS query logs
 - Application/service logs
 
 **For serverless (Lambda, Cloud Functions):**
+
 - Function code versions
 - Execution logs
 - IAM policies and environment variables
@@ -236,18 +243,21 @@ With evidence collected and threat contained, investigate root cause and scope.
 **Key investigation questions for cloud incidents:**
 
 **How did the attacker get in?**
+
 - Compromised credentials? (Search CloudTrail for unusual access patterns)
 - Vulnerable application? (Review application logs, WAF alerts)
 - Misconfigured resource? (Check public S3 buckets, open security groups)
 - Supply chain? (Review third-party integrations, compromised dependencies)
 
 **What did the attacker do?**
+
 - API calls made? (CloudTrail analysis)
 - Data accessed or exfiltrated? (S3 access logs, data transfer metrics)
 - Resources created? (Search for new instances, Lambda functions, IAM users)
 - Lateral movement? (Cross-account assume role activity)
 
 **What's the blast radius?**
+
 - Which accounts/regions affected?
 - Which applications/services impacted?
 - What data was exposed?
@@ -293,6 +303,7 @@ Let's walk through a complete playbook:
 **Trigger**: GuardDuty alert "Exfiltration:S3/AnomalousBehavior" or unusual S3 data transfer spike
 
 **1. Evidence Collection (automated):**
+
 ```python
 # Collect S3 access logs for affected bucket
 logs = query_s3_access_logs(
@@ -317,6 +328,7 @@ all_principal_activity = query_cloudtrail(
 ```
 
 **2. Containment (automated):**
+
 ```python
 # Deny access to bucket from compromised principal
 apply_bucket_policy_deny(bucket=affected_bucket, principal=principal)
@@ -334,6 +346,7 @@ enable_s3_object_lock(bucket=affected_bucket)
 ```
 
 **3. Investigation questions:**
+
 - How many objects were accessed? (S3 access logs)
 - How much data was transferred? (CloudWatch metrics)
 - Where was data sent? (VPC Flow Logs, S3 replication configs)
@@ -341,6 +354,7 @@ enable_s3_object_lock(bucket=affected_bucket)
 - Are other buckets affected? (Search for similar access patterns)
 
 **4. Remediation:**
+
 - Restore any deleted objects from backups
 - Review and tighten S3 bucket policies
 - Enable S3 Block Public Access
@@ -352,20 +366,17 @@ enable_s3_object_lock(bucket=affected_bucket)
 Start with these playbooks:
 
 **Must-have playbooks (build these first):**
+
 1. EC2/VM compromise and cryptomining
 2. S3 data exfiltration
 3. IAM credential compromise
 4. Publicly exposed resource (RDS, S3, ElastiCache)
 5. Insider threat / privilege abuse
 
-**Advanced playbooks:**
-6. Ransomware in cloud storage
-7. Serverless function compromise (Lambda/Cloud Functions)
-8. Container breakout and cluster compromise
-9. Cross-account assume role abuse
-10. Supply chain attack via compromised CI/CD
+**Advanced playbooks:** 6. Ransomware in cloud storage 7. Serverless function compromise (Lambda/Cloud Functions) 8. Container breakout and cluster compromise 9. Cross-account assume role abuse 10. Supply chain attack via compromised CI/CD
 
 **For each playbook, document:**
+
 - Trigger conditions and alert thresholds
 - Automated evidence collection steps
 - Containment decision tree
@@ -378,17 +389,20 @@ Start with these playbooks:
 Playbooks that aren't tested will fail when it matters. Implement regular testing:
 
 **Monthly: Tabletop exercises**
+
 - Walk through playbooks with IR team
 - Identify gaps and unclear procedures
 - Update documentation based on feedback
 
 **Quarterly: Purple team simulations**
+
 - Run realistic attack scenarios in non-prod
 - Execute playbooks end-to-end
 - Measure response times and automation effectiveness
 - Fix any broken automation
 
 **Annually: Full IR simulation**
+
 - Simulate major incident across multiple accounts/regions
 - Involve executive leadership
 - Test communication procedures

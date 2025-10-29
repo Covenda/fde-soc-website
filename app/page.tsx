@@ -119,7 +119,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <Hero
-        title="Build and run your AI-SOC with embedded security engineers"
+        title="We are your AI-SOC"
         description="We embed Forward-Deployed Security Engineers with your team to build detections, automate responses, and co-manage operations on the Covenda unified risk platform."
         primaryCta={{ text: "Request Demo", href: "/contact" }}
         secondaryCta={{ text: "Talk to an Engineer", href: "/contact" }}

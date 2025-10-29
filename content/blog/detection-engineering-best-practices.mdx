@@ -47,9 +47,9 @@ detection:
   selection:
     EventID: 4688
     ProcessCommandLine|contains:
-      - '-NoProfile'
-      - '-ExecutionPolicy Bypass'
-      - '-EncodedCommand'
+      - "-NoProfile"
+      - "-ExecutionPolicy Bypass"
+      - "-EncodedCommand"
   condition: selection
 falsepositives:
   - Legitimate admin scripts (should use signed scripts instead)
@@ -67,6 +67,7 @@ Every high-fidelity detection starts as a noisy mess. The difference between goo
 - Review FP categories quarterly—patterns emerge
 
 We maintain a "false positive journal" in Notion/Confluence that answers:
+
 - What caused the FP?
 - Why is it benign?
 - How did we tune it?
@@ -91,18 +92,20 @@ Track these metrics to assess detection health:
 - **Coverage**: What % of MITRE ATT&CK techniques can you detect?
 - **Alert Volume**: Are analysts drowning in noise?
 
-Aim for <20% false positive rate and <1 hour MTTT for high-severity alerts.
+Aim for less than 20% false positive rate and less than 1 hour MTTT for high-severity alerts.
 
 ## When to use Sigma vs. native queries
 
 Sigma rules are portable and reusable, but they have limitations:
 
 **Use Sigma when**:
+
 - You need cross-platform compatibility
 - Building a detection library for multiple clients
 - Sharing rules with the community
 
 **Use native queries when**:
+
 - You need advanced platform features (machine learning, joins, lookups)
 - Performance optimization is critical
 - The logic is highly specific to your environment

@@ -17,12 +17,14 @@ This guide shares our methodology for systematically reducing alert fatigue whil
 You can't improve what you don't measure. Before making any changes, establish these baseline metrics:
 
 **Alert volume metrics:**
+
 - Total alerts per day/week/month
 - Alerts by severity (critical, high, medium, low)
 - Alerts by source (EDR, SIEM, CSPM, IDS, etc.)
 - Top 20 noisiest detection rules
 
 **Quality metrics:**
+
 - True positive rate: % of alerts that represent actual security issues
 - False positive rate: % of alerts that are benign
 - Mean Time to Triage (MTTT): How long until an analyst reviews the alert
@@ -30,6 +32,7 @@ You can't improve what you don't measure. Before making any changes, establish t
 - Analyst feedback scores: Ask analysts to rate alert quality
 
 **Analyst health metrics:**
+
 - % of time spent on triage vs. investigation vs. proactive work
 - Backlog age: Oldest unreviewed alert
 - Turnover rate and exit interview themes
@@ -50,6 +53,7 @@ Start by analyzing 30-60 days of alert data. Look for:
 - **Mistuned thresholds**: Rules that fire on normal operations (e.g., "failed login" that alerts on single failures instead of patterns)
 
 In a recent engagement, we analyzed a client's detection library and found:
+
 - 35 rules that hadn't produced a true positive in 6 months
 - 18 rules that were duplicates with slightly different logic
 - 22 rules with thresholds set so low they fired on normal behavior
@@ -58,9 +62,10 @@ In a recent engagement, we analyzed a client's detection library and found:
 
 ### Medium-term: Improve detection logic
 
-For detections that have *some* value but high false positive rates, improve the logic:
+For detections that have _some_ value but high false positive rates, improve the logic:
 
 **Add context and enrichment:**
+
 ```yaml
 # Before: Noisy rule
 title: Suspicious PowerShell Execution
@@ -88,6 +93,7 @@ detection:
 **Use behavioral baselines:**
 
 Instead of alerting on individual events, look for anomalies:
+
 - "User logged in from 5 different countries in 2 hours" (impossible travel)
 - "Process spawned 50+ child processes" (process injection)
 - "User downloaded 10x their normal data volume" (exfiltration)
@@ -95,6 +101,7 @@ Instead of alerting on individual events, look for anomalies:
 **Implement tiered severity:**
 
 Not every alert needs immediate human review. Implement risk-based scoring:
+
 - **Critical**: Requires immediate response (confirmed malware, active data exfiltration)
 - **High**: Investigate within 1 hour (suspicious lateral movement, privilege escalation attempts)
 - **Medium**: Review within 8 hours (anomalous authentication, policy violations)
@@ -107,12 +114,14 @@ The best detections don't just alert—they investigate automatically and presen
 ### Build enrichment pipelines
 
 When an alert fires, automatically gather:
+
 - **User context**: Department, manager, normal work hours, historical behavior
 - **Asset context**: Criticality, patch status, vulnerability scan results, known software
 - **Threat intelligence**: Is this IP/domain/hash known malicious?
 - **Historical analysis**: Has this user/host exhibited this behavior before?
 
 Example automated enrichment workflow:
+
 ```
 Alert: Suspicious outbound connection to unknown domain
 ↓
@@ -135,6 +144,7 @@ This turns a 15-minute manual investigation into a 30-second automated triage.
 For alerts that require human review, provide investigators with a head start:
 
 **Good alert ticket:**
+
 ```
 ALERT: Possible credential stuffing attack
 Severity: High
@@ -157,6 +167,7 @@ CLICK HERE to approve automated response actions
 ```
 
 Compare this to a typical alert:
+
 ```
 Rule: "Multiple failed logins"
 Count: 847
@@ -172,6 +183,7 @@ Detection quality improves through continuous learning. Build these feedback mec
 ### False positive journal
 
 Maintain a structured log of every false positive:
+
 - Date and alert details
 - Why it was a false positive
 - Root cause (noisy rule, legitimate activity, missing context)
@@ -179,6 +191,7 @@ Maintain a structured log of every false positive:
 - Next review date
 
 Over time, patterns emerge. You'll notice:
+
 - "Developer tools trigger malware alerts" → Add developer hostnames to allowlist
 - "IT automation looks like lateral movement" → Filter service accounts
 - "Legitimate admin activity triggers privilege escalation" → Refine detection logic
@@ -186,6 +199,7 @@ Over time, patterns emerge. You'll notice:
 ### Analyst feedback
 
 After every investigation, ask analysts to rate:
+
 - Alert quality: "Was this alert useful?" (1-5 scale)
 - Investigation difficulty: "How long did this take vs. expectation?"
 - Context completeness: "Did automated enrichment help?"
@@ -195,6 +209,7 @@ Use this data to identify problem detections and improvement opportunities.
 ### Monthly detection reviews
 
 Schedule recurring reviews with your detection engineering team:
+
 - Review detections with highest false positive rates
 - Analyze detections with zero true positives
 - Discuss analyst feedback and pain points
@@ -207,6 +222,7 @@ Reducing alert fatigue isn't a one-time project—it's an ongoing discipline.
 ### Adopt detection-as-code practices
 
 Treat detection rules like production code:
+
 - Version control in Git
 - Peer review before deployment
 - Testing with sample logs
@@ -216,14 +232,16 @@ Treat detection rules like production code:
 ### Establish quality gates
 
 Before deploying new detections:
+
 1. **Test in staging**: Run against 30 days of historical logs
-2. **Measure false positive rate**: Aim for <10% FP rate for new rules
+2. **Measure false positive rate**: Aim for &lt;10% FP rate for new rules
 3. **Document expected volume**: "This rule should fire 5-10 times per day"
 4. **Create tuning plan**: "Review after 7 days, tune based on feedback"
 
 ### Create detection lifecycle policies
 
 Not all detections age well. Implement retention policies:
+
 - **New detections**: Review after 7 days, 30 days, 90 days
 - **Mature detections**: Quarterly review of metrics and tuning needs
 - **Stale detections**: Archive rules with zero true positives in 6 months
@@ -232,10 +250,12 @@ Not all detections age well. Implement retention policies:
 ## Real-world results
 
 We recently worked with a SaaS company facing severe alert fatigue:
+
 - **Before**: 2,000 alerts/day, 88% false positive rate, analysts spending 75% of time on triage
 - **After 12 weeks**: 180 alerts/day, 12% false positive rate, analysts spending 80% of time on proactive work
 
 The transformation came from:
+
 1. Disabling 45 never-true-positive rules (40% volume reduction)
 2. Improving logic on top 20 noisy rules (35% volume reduction)
 3. Implementing automated enrichment and tiering (60% reduction in analyst triage time)
@@ -246,6 +266,7 @@ The SOC manager told us: "My team can finally breathe. We're catching threats we
 ## Conclusion
 
 Reducing alert fatigue requires a systematic, data-driven approach:
+
 1. **Measure**: Establish baseline metrics for volume, quality, and analyst health
 2. **Eliminate**: Turn off broken detections and consolidate duplicates
 3. **Improve**: Add context, use behavioral baselines, implement tiered severity
