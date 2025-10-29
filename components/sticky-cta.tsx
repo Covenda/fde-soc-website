@@ -18,7 +18,7 @@ interface StickyCTAProps {
 export function StickyCTA({
   primaryText = "Request Demo",
   primaryHref = "/contact",
-  secondaryText = "Talk to an Engineer",
+  secondaryText = "Contact Us",
   secondaryHref = "/contact",
   showAfterScroll = 800,
 }: StickyCTAProps) {

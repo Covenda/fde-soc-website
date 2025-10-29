@@ -18,7 +18,7 @@ export default function PrivacyPage() {
 
             <h2>Introduction</h2>
             <p>
-              Covenda, Inc. ("we," "our," or "us") respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+              Covenda Labs ("we," "our," or "us") respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
             </p>
 
             <h2>Information We Collect</h2>
@@ -66,7 +66,7 @@ export default function PrivacyPage() {
             <ul>
               <li>Encryption of data in transit and at rest</li>
               <li>Access controls and authentication</li>
-              <li>Regular security assessments</li>
+              <li>Regular vulnerability assessments</li>
               <li>Employee training on data protection</li>
             </ul>
 
@@ -107,7 +107,8 @@ export default function PrivacyPage() {
             </p>
             <p>
               Email: privacy@covenda.ai<br />
-              Address: 123 Security Boulevard, Suite 400, San Francisco, CA 94105
+              Covenda Labs<br />
+              361 17th St NW, Atlanta, GA 30363
             </p>
           </div>
         </div>

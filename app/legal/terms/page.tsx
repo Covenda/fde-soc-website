@@ -26,7 +26,7 @@ export default function TermsPage() {
               Covenda provides security engineering and operations services, including but not limited to:
             </p>
             <ul>
-              <li>Security posture assessments</li>
+              <li>Vulnerability assessments</li>
               <li>Forward-Deployed Security Engineering (FDE)</li>
               <li>Co-managed AI-SOC operations</li>
               <li>Detection engineering and automation</li>
@@ -119,7 +119,8 @@ export default function TermsPage() {
             </p>
             <p>
               Email: legal@covenda.ai<br />
-              Address: 123 Security Boulevard, Suite 400, San Francisco, CA 94105
+              Covenda Labs<br />
+              361 17th St NW, Atlanta, GA 30363
             </p>
           </div>
         </div>

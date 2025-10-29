@@ -17,7 +17,7 @@ import { getBlogPosts } from "@/lib/mdx";
 import { formatDate } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Threat Engineering Insights",
   description:
     "Insights, best practices, and technical guides for security engineering and operations from the Covenda team.",
 };
@@ -28,7 +28,7 @@ export default async function BlogPage() {
   return (
     <>
       <Hero
-        title="Security Engineering Insights"
+        title="Threat Engineering Insights"
         description="Best practices, technical guides, and lessons learned from building and operating security programs."
       />
 

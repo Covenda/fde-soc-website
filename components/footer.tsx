@@ -12,7 +12,7 @@ const navigation = {
     { name: "About", href: "/about" },
     { name: "Case Studies", href: "/customers/case-studies" },
     { name: "Pricing", href: "/pricing/services" },
-    { name: "Blog", href: "/blog" },
+    { name: "Threat Engineering Insights", href: "/blog" },
   ],
   legal: [
     { name: "Privacy Policy", href: "/legal/privacy" },

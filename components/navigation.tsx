@@ -11,7 +11,7 @@ const navigation = [
   { name: "Customers", href: "/customers/case-studies" },
   { name: "Pricing", href: "/pricing/services" },
   { name: "About", href: "/about" },
-  { name: "Blog", href: "/blog" },
+  { name: "Threat Engineering Insights", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -53,7 +53,7 @@ export function Navigation() {
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
             <Button variant="orange" asChild>
-              <Link href="/contact">Talk to an Engineer</Link>
+              <Link href="/contact">Contact Us</Link>
             </Button>
             <Button variant="black" asChild>
               <Link href="/contact">Request Demo</Link>
@@ -104,7 +104,7 @@ export function Navigation() {
                       href="/contact"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Talk to an Engineer
+                      Contact Us
                     </Link>
                   </Button>
                   <Button variant="black" className="w-full" asChild>

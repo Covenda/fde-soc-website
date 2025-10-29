@@ -8,10 +8,10 @@
       .phase-text { fill: #64748b; font-family: system-ui, -apple-system, sans-serif; font-size: 12px; }
       .timeline { stroke: #2563eb; stroke-width: 3; fill: none; }
       .timeline-dot { fill: #2563eb; }
-      .arrow { stroke: #2563eb; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .arrow { stroke: #f97316; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
     </style>
     <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-      <polygon points="0 0, 10 3, 0 6" fill="#2563eb" />
+      <polygon points="0 0, 10 3, 0 6" fill="#f97316" />
     </marker>
   </defs>
 

@@ -122,7 +122,7 @@ export default function Home() {
         title="We are your AI-SOC"
         description="We embed Forward-Deployed Security Engineers with your team to build detections, automate responses, and co-manage operations on the Covenda unified risk platform."
         primaryCta={{ text: "Request Demo", href: "/contact" }}
-        secondaryCta={{ text: "Talk to an Engineer", href: "/contact" }}
+        secondaryCta={{ text: "Contact Us", href: "/contact" }}
       />
 
       {/* Stats Section */}
@@ -293,7 +293,7 @@ export default function Home() {
                 </Link>
               </Button>
               <Button size="xl" variant="orange" asChild>
-                <Link href="/contact">Talk to an Engineer</Link>
+                <Link href="/contact">Contact Us</Link>
               </Button>
             </div>
           </div>
