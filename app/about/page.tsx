@@ -203,13 +203,22 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="xl" asChild>
-                <Link href="/contact">
-                  Get Started
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-3"
+                >
+                  <span>Get Started</span>
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
               <Button size="xl" variant="outline" asChild>
-                <Link href="/pricing/services">View Pricing</Link>
+                <Link
+                  href="/pricing/services"
+                  className="inline-flex items-center gap-3"
+                >
+                  <span>View Pricing</span>
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
               </Button>
             </div>
           </div>

@@ -430,8 +430,11 @@ export default function AISOCPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="xl" asChild>
-                <Link href="/contact">
-                  Contact Sales
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-3"
+                >
+                  <span>Contact Sales</span>
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>

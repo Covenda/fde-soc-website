@@ -177,7 +177,13 @@ export default function PricingPage() {
                     variant={tier.popular ? "default" : "outline"}
                     asChild
                   >
-                    <Link href="/contact">{tier.cta}</Link>
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center gap-3"
+                    >
+                      <span>{tier.cta}</span>
+                      <ArrowRight className="h-5 w-5" />
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>

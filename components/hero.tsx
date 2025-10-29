@@ -35,15 +35,24 @@ export function Hero({
               <div className="mt-10 flex items-center justify-center gap-x-6 animate-fade-in-up [animation-delay:400ms]">
                 {primaryCta && (
                   <Button size="lg" variant="black" asChild>
-                    <Link href={primaryCta.href}>
-                      {primaryCta.text}
+                    <Link
+                      href={primaryCta.href}
+                      className="inline-flex items-center gap-3"
+                    >
+                      <span>{primaryCta.text}</span>
                       <ArrowRight className="h-4 w-4" />
                     </Link>
                   </Button>
                 )}
                 {secondaryCta && (
                   <Button size="lg" variant="orange" asChild>
-                    <Link href={secondaryCta.href}>{secondaryCta.text}</Link>
+                    <Link
+                      href={secondaryCta.href}
+                      className="inline-flex items-center gap-3"
+                    >
+                      <span>{secondaryCta.text}</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
                   </Button>
                 )}
               </div>

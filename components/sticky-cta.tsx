@@ -89,8 +89,11 @@ export function StickyCTA({
                 onClick={handleSecondaryClick}
                 className="hidden sm:inline-flex"
               >
-                <Link href={secondaryHref}>
-                  {secondaryText}
+                <Link
+                  href={secondaryHref}
+                  className="inline-flex items-center gap-3"
+                >
+                  <span>{secondaryText}</span>
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
@@ -101,8 +104,11 @@ export function StickyCTA({
                 size="sm"
                 onClick={handlePrimaryClick}
               >
-                <Link href={primaryHref}>
-                  {primaryText}
+                <Link
+                  href={primaryHref}
+                  className="inline-flex items-center gap-3"
+                >
+                  <span>{primaryText}</span>
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
