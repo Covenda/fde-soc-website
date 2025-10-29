@@ -44,12 +44,12 @@ const tiers = [
     popular: false,
   },
   {
-    name: "Build",
+    name: "Deploy",
     duration: "6-12 weeks",
     pricing: "Starting at $120,000",
     description: "Outcome-driven FDE engagements",
     features: [
-      "1-3+ Forward-Deployed Engineers",
+      "Forward-Deployed Security Engineers",
       "Sprint-based delivery (2-week cycles)",
       "Detection engineering & automation",
       "Custom runbooks and playbooks",

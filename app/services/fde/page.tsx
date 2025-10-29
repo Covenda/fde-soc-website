@@ -415,7 +415,7 @@ export default function FDEPage() {
             <h2 className="mb-4">Ready to embed security engineers?</h2>
             <p className="text-lg text-muted-foreground mb-10">
               Start with a 2-4 week assessment to identify gaps and build a
-              prioritized roadmap, then transition to a Build engagement with
+              prioritized roadmap, then transition to a Deploy engagement with
               embedded FDEs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -41,10 +41,10 @@ const services = [
   },
   {
     icon: Zap,
-    title: "Build",
+    title: "Deploy",
     description: "Forward-deployed security engineers embedded with your team",
     features: [
-      "1-3+ engineers in sprint-based pods",
+      "Security engineers in sprint-based pods",
       "Detection engineering & automation",
       "Runbooks and playbooks",
       "Knowledge transfer & documentation",
@@ -207,7 +207,7 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  1-3+ security engineers join your team in 2-week sprints.
+                  Security engineers join your team in 2-week sprints.
                   Daily standups, shared Slack channels, and collaborative
                   development.
                 </p>

@@ -29,7 +29,7 @@ const services = [
       "Embedded security engineers who join your team to build and improve your security posture",
     features: [
       "Sprint-based delivery (2-week cycles)",
-      "1-3+ engineers embedded with your team",
+      "Security engineers embedded with your team",
       "Detection engineering & automation",
       "Knowledge transfer & documentation",
     ],
@@ -106,7 +106,7 @@ export default function ServicesPage() {
           <div className="mb-16 rounded-lg border bg-card p-8">
             <Image
               src="/diagrams/engagement-timeline.svg"
-              alt="Engagement Timeline: Assess, Build, Operate"
+              alt="Engagement Timeline: Assess, Deploy, Operate"
               width={900}
               height={300}
               className="w-full h-auto"
@@ -118,7 +118,7 @@ export default function ServicesPage() {
               <CardHeader>
                 <CardTitle>1. Assess (2-4 weeks)</CardTitle>
                 <CardDescription>
-                  Fixed-scope vulnerability assessment
+                  Fixed-scope security posture review
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -133,7 +133,7 @@ export default function ServicesPage() {
 
             <Card>
               <CardHeader>
-                <CardTitle>2. Build (6-12 weeks)</CardTitle>
+                <CardTitle>2. Deploy (6-12 weeks)</CardTitle>
                 <CardDescription>Embedded engineering pods</CardDescription>
               </CardHeader>
               <CardContent>
@@ -224,7 +224,7 @@ export default function ServicesPage() {
       <Section className="bg-muted/30">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="mb-4">Powered by the unified risk platform</h2>
+            <h2 className="mb-4">Powered by Covenda AI unified risk platform</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               All our services leverage the Covenda platform to connect threat
               models, controls, evidence, detections, and automated response.
@@ -248,7 +248,7 @@ export default function ServicesPage() {
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="mb-4">Start with an assessment</h2>
             <p className="text-lg text-muted-foreground mb-10">
-              Not sure where to begin? Our 2-4 week vulnerability assessment provides a
+              Not sure where to begin? Our 2-4 week assessment provides a
               comprehensive review of your security posture and a prioritized
               roadmap.
             </p>
@@ -262,7 +262,7 @@ export default function ServicesPage() {
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="xl" variant="black" asChild>
+              <Button size="xl" variant="outline" asChild>
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-3"

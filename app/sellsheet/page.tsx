@@ -86,7 +86,7 @@ export default function SellSheetPage() {
               <div className="border-2 border-blue-600 rounded-lg p-4 bg-blue-50">
                 <div className="flex items-center gap-2 mb-3">
                   <Zap className="h-6 w-6 text-blue-600" />
-                  <h3 className="font-bold text-lg">Build</h3>
+                  <h3 className="font-bold text-lg">Deploy</h3>
                 </div>
                 <p className="text-sm text-gray-600 mb-3">
                   6-12 weeks with embedded FDE pod
@@ -94,7 +94,7 @@ export default function SellSheetPage() {
                 <ul className="space-y-1 text-sm text-gray-700">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span>1-3+ embedded engineers</span>
+                    <span>Security engineers embedded with your team</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
