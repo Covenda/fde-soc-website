@@ -202,7 +202,7 @@ export default function AboutPage() {
               Build engagement.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="xl" asChild>
+              <Button size="xl" variant="black" asChild>
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-3"
@@ -211,7 +211,7 @@ export default function AboutPage() {
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="xl" variant="outline" asChild>
+              <Button size="xl" variant="black" asChild>
                 <Link
                   href="/pricing/services"
                   className="inline-flex items-center gap-3"

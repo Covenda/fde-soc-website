@@ -107,9 +107,10 @@ export default async function BlogPostPage({
                   <span>Contact Us</span>
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" variant="black" asChild>
                 <Link href="/services" className="inline-flex items-center gap-3">
                   <span>View Services</span>
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
             </div>

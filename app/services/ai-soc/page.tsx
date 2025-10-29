@@ -438,7 +438,7 @@ export default function AISOCPage() {
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="xl" variant="outline" asChild>
+              <Button size="xl" variant="black" asChild>
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-3"
