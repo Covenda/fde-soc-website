@@ -1,13 +1,13 @@
 <svg width="900" height="300" viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      .phase-box { fill: #ffffff; stroke: #2563eb; stroke-width: 2; }
-      .phase-box-active { fill: #eff6ff; stroke: #2563eb; stroke-width: 3; }
+      .phase-box { fill: #ffffff; stroke: #f97316; stroke-width: 2; }
+      .phase-box-active { fill: #fff7ed; stroke: #f97316; stroke-width: 3; }
       .phase-title { fill: #1e293b; font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 700; }
-      .phase-subtitle { fill: #2563eb; font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 600; }
+      .phase-subtitle { fill: #f97316; font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 600; }
       .phase-text { fill: #64748b; font-family: system-ui, -apple-system, sans-serif; font-size: 12px; }
-      .timeline { stroke: #2563eb; stroke-width: 3; fill: none; }
-      .timeline-dot { fill: #2563eb; }
+      .timeline { stroke: #f97316; stroke-width: 3; fill: none; }
+      .timeline-dot { fill: #f97316; }
       .arrow { stroke: #f97316; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
     </style>
     <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
@@ -31,13 +31,13 @@
   <text class="phase-text" x="150" y="216" text-anchor="middle">• Prioritized roadmap</text>
   <text class="phase-text" x="150" y="234" text-anchor="middle">• Resource planning</text>
 
-  <!-- Arrow to Build -->
+  <!-- Arrow to Deploy -->
   <path class="arrow" d="M 250 180 L 320 180" />
 
-  <!-- Build Phase -->
+  <!-- Deploy Phase -->
   <circle class="timeline-dot" cx="450" cy="80" r="8" />
   <rect class="phase-box" x="350" y="110" width="200" height="150" rx="8" />
-  <text class="phase-title" x="450" y="135" text-anchor="middle">Build</text>
+  <text class="phase-title" x="450" y="135" text-anchor="middle">Deploy</text>
   <text class="phase-subtitle" x="450" y="155" text-anchor="middle">6-12 weeks</text>
   <text class="phase-text" x="450" y="180" text-anchor="middle">• Embedded FDE pods</text>
   <text class="phase-text" x="450" y="198" text-anchor="middle">• Detection engineering</text>
