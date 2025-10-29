@@ -287,9 +287,9 @@ export default function PricingPage() {
               Most engagements start with a 2-4 week assessment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="xl" variant="black" asChild>
-                <Link href="/contact" className="inline-flex items-center gap-3">
-                  <span>Talk to Sales</span>
+              <Button size="xl" asChild>
+                <Link href="/contact">
+                  Talk to Sales
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
