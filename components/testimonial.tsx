@@ -18,7 +18,6 @@ export function Testimonial({ quote, author, role, company }: TestimonialProps) 
         </blockquote>
         <div className="flex items-center gap-4">
           <div className="flex-1">
-            <div className="font-semibold text-foreground">{author}</div>
             <div className="text-sm text-muted-foreground">
               {role}, {company}
             </div>

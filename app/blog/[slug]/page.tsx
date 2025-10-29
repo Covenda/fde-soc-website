@@ -103,10 +103,15 @@ export default async function BlogPostPage({
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="orange" asChild>
-                <Link href="/contact">Contact Us</Link>
+                <Link href="/contact" className="inline-flex items-center gap-3">
+                  <span>Contact Us</span>
+                </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="/services">View Services</Link>
+              <Button size="lg" variant="black" asChild>
+                <Link href="/services" className="inline-flex items-center gap-3">
+                  <span>View Services</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               </Button>
             </div>
           </div>

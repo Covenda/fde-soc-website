@@ -47,7 +47,7 @@ export default function AboutPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    We measure success by MTTD, MTTR, and coverage—not hours
+                    We measure success by MTTD, MTTR, and coverage - not hours
                     billed or reports delivered. Every engagement has clear SLOs
                     and exit criteria.
                   </p>
@@ -116,7 +116,7 @@ export default function AboutPage() {
                   struggles.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mt-4">
-                  Our Forward-Deployed Engineers aren't just consultants—they're
+                  Our Forward-Deployed Engineers aren't just consultants - they're
                   seasoned security professionals who have written detection
                   rules at 2 AM, triaged false positives during incident
                   response, and automated runbooks to reduce analyst burnout.
@@ -202,7 +202,7 @@ export default function AboutPage() {
               Build engagement.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="xl" asChild>
+              <Button size="xl" variant="black" asChild>
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-3"
@@ -211,7 +211,7 @@ export default function AboutPage() {
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="xl" variant="outline" asChild>
+              <Button size="xl" variant="black" asChild>
                 <Link
                   href="/pricing/services"
                   className="inline-flex items-center gap-3"

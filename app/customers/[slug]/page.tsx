@@ -189,15 +189,16 @@ export default async function CaseStudyPage({
               program.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="xl" asChild>
-                <Link href="/contact">
-                  Get Started
+              <Button size="xl" variant="black" asChild>
+                <Link href="/contact" className="inline-flex items-center gap-3">
+                  <span>Get Started</span>
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="xl" variant="outline" asChild>
-                <Link href="/customers/case-studies">
-                  View All Case Studies
+              <Button size="xl" variant="black" asChild>
+                <Link href="/customers/case-studies" className="inline-flex items-center gap-3">
+                  <span>View All Case Studies</span>
+                  <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
             </div>

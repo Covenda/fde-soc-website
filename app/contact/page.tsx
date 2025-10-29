@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { Hero } from "@/components/hero";
 import { Container } from "@/components/container";
 import { Section } from "@/components/section";
@@ -61,25 +61,6 @@ export default function ContactPage() {
                     <CardHeader>
                       <div className="flex items-center gap-3">
                         <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                          <Phone className="h-5 w-5 text-primary" />
-                        </div>
-                        <CardTitle className="text-lg">Phone</CardTitle>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground">
-                        Sales: <span className="text-foreground font-medium">+1 (555) 123-4567</span>
-                      </p>
-                      <p className="text-sm text-muted-foreground mt-2">
-                        Business hours: Monday-Friday, 9 AM - 6 PM ET
-                      </p>
-                    </CardContent>
-                  </Card>
-
-                  <Card>
-                    <CardHeader>
-                      <div className="flex items-center gap-3">
-                        <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
                           <MapPin className="h-5 w-5 text-primary" />
                         </div>
                         <CardTitle className="text-lg">Offices</CardTitle>
@@ -106,9 +87,6 @@ export default function ContactPage() {
                           Dover, DE 19901
                         </p>
                       </div>
-                      <p className="text-sm text-muted-foreground pt-2 border-t">
-                        Remote-first company. Office by appointment only.
-                      </p>
                     </CardContent>
                   </Card>
                 </div>
@@ -117,7 +95,7 @@ export default function ContactPage() {
               <div className="p-6 bg-muted/50 rounded-lg">
                 <h3 className="font-semibold mb-2">Response time</h3>
                 <p className="text-sm text-muted-foreground">
-                  We aim to respond to all inquiries within 24 hours during business days. For urgent security matters, please call our sales line directly.
+                  We aim to respond to all inquiries within 24 hours during business days.
                 </p>
               </div>
 

@@ -158,7 +158,7 @@ export default function SellSheetPage() {
                   Embedded Expertise
                 </h3>
                 <p className="text-sm text-gray-700">
-                  FDEs join your team, participate in standups, and deliver through sprint cycles—not remote
+                  FDEs join your team, participate in standups, and deliver through sprint cycles - not remote
                   consulting engagements.
                 </p>
               </div>
@@ -168,7 +168,7 @@ export default function SellSheetPage() {
                   Outcome-Driven
                 </h3>
                 <p className="text-sm text-gray-700">
-                  Measurable SLOs and exit criteria tied to MTTD, MTTR, coverage %, and false positive reduction—not billable hours.
+                  Measurable SLOs and exit criteria tied to MTTD, MTTR, coverage %, and false positive reduction - not billable hours.
                 </p>
               </div>
               <div>
