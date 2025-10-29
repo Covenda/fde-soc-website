@@ -156,7 +156,7 @@ export default function AISOCPage() {
     <>
       <Hero
         title="Build & Co-Manage Your AI-SOC"
-        description="We build your detection pipeline and co-manage operations with defined SLOs. 24/7 monitoring, triage, and escalation—while you retain control of response."
+        description="We build your detection pipeline and co-manage operations with defined SLOs. 24/7 monitoring, triage, and escalation - while you retain control of response."
         primaryCta={{ text: "Activate Experts Now", href: "/contact" }}
         secondaryCta={{ text: "View Pricing", href: "/pricing/services" }}
       />

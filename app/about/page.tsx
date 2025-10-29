@@ -47,7 +47,7 @@ export default function AboutPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    We measure success by MTTD, MTTR, and coverage—not hours
+                    We measure success by MTTD, MTTR, and coverage - not hours
                     billed or reports delivered. Every engagement has clear SLOs
                     and exit criteria.
                   </p>
@@ -116,7 +116,7 @@ export default function AboutPage() {
                   struggles.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mt-4">
-                  Our Forward-Deployed Engineers aren't just consultants—they're
+                  Our Forward-Deployed Engineers aren't just consultants - they're
                   seasoned security professionals who have written detection
                   rules at 2 AM, triaged false positives during incident
                   response, and automated runbooks to reduce analyst burnout.

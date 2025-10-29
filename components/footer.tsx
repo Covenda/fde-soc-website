@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/container";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Linkedin } from "lucide-react";
 
 const navigation = {
   services: [
@@ -20,18 +20,8 @@ const navigation = {
   ],
   social: [
     {
-      name: "Twitter",
-      href: "#",
-      icon: Twitter,
-    },
-    {
-      name: "GitHub",
-      href: "#",
-      icon: Github,
-    },
-    {
       name: "LinkedIn",
-      href: "#",
+      href: "https://www.linkedin.com/company/covenda-ai",
       icon: Linkedin,
     },
   ],
