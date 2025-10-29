@@ -82,18 +82,31 @@ export default function ContactPage() {
                         <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
                           <MapPin className="h-5 w-5 text-primary" />
                         </div>
-                        <CardTitle className="text-lg">Office</CardTitle>
+                        <CardTitle className="text-lg">Offices</CardTitle>
                       </div>
                     </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground">
-                        Covenda, Inc.
-                        <br />
-                        123 Security Boulevard, Suite 400
-                        <br />
-                        San Francisco, CA 94105
-                      </p>
-                      <p className="text-sm text-muted-foreground mt-2">
+                    <CardContent className="space-y-4">
+                      <div>
+                        <p className="text-foreground font-medium mb-1">Atlanta</p>
+                        <p className="text-muted-foreground text-sm">
+                          Covenda Labs
+                          <br />
+                          361 17th St NW
+                          <br />
+                          Atlanta, GA 30363
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-foreground font-medium mb-1">Delaware</p>
+                        <p className="text-muted-foreground text-sm">
+                          Covenda Labs
+                          <br />
+                          8 The Green, STE R
+                          <br />
+                          Dover, DE 19901
+                        </p>
+                      </div>
+                      <p className="text-sm text-muted-foreground pt-2 border-t">
                         Remote-first company. Office by appointment only.
                       </p>
                     </CardContent>

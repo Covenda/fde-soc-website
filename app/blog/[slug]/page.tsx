@@ -103,7 +103,7 @@ export default async function BlogPostPage({
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="orange" asChild>
-                <Link href="/contact">Talk to an Engineer</Link>
+                <Link href="/contact">Contact Us</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
                 <Link href="/services">View Services</Link>

@@ -118,7 +118,7 @@ export default function ServicesPage() {
               <CardHeader>
                 <CardTitle>1. Assess (2-4 weeks)</CardTitle>
                 <CardDescription>
-                  Fixed-scope security posture review
+                  Fixed-scope vulnerability assessment
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -248,7 +248,7 @@ export default function ServicesPage() {
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="mb-4">Start with an assessment</h2>
             <p className="text-lg text-muted-foreground mb-10">
-              Not sure where to begin? Our 2-4 week assessment provides a
+              Not sure where to begin? Our 2-4 week vulnerability assessment provides a
               comprehensive review of your security posture and a prioritized
               roadmap.
             </p>

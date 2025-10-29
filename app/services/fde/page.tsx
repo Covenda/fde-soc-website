@@ -147,7 +147,7 @@ export default function FDEPage() {
         title="Forward-Deployed Security Engineering"
         description="Security engineers embedded with your team, delivering production-ready detections, automation, and knowledge transfer through sprint-based delivery."
         primaryCta={{ text: "Start with Assess", href: "/pricing/services" }}
-        secondaryCta={{ text: "Talk to an Engineer", href: "/contact" }}
+        secondaryCta={{ text: "Contact Us", href: "/contact" }}
       />
 
       {/* What is FDE */}
@@ -433,7 +433,7 @@ export default function FDEPage() {
                   href="/contact"
                   className="inline-flex items-center gap-3"
                 >
-                  <span>Talk to an Engineer</span>
+                  <span>Contact Us</span>
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
