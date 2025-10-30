@@ -1,132 +1,43 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 221 83% 53%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222 47% 11%;
-    --cta: 25 95% 53%;
-    --cta-foreground: 0 0% 100%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 221 83% 53%;
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217 91% 60%;
-    --primary-foreground: 222 47% 11%;
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 217 33% 17%;
-    --accent-foreground: 210 40% 98%;
-    --cta: 25 95% 58%;
-    --cta-foreground: 0 0% 100%;
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 224 76% 48%;
-  }
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --accent-orange: #f97316;
+  --accent-orange-hover: #ea580c;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-900: #111827;
 }
 
-@layer base {
-  * {
-    border-color: hsl(var(--border));
-  }
-  body {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent-orange);
+  --color-accent-hover: var(--accent-orange-hover);
+  --color-gray-50: var(--gray-50);
+  --color-gray-100: var(--gray-100);
+  --color-gray-200: var(--gray-200);
+  --color-gray-300: var(--gray-300);
+  --color-gray-600: var(--gray-600);
+  --color-gray-700: var(--gray-700);
+  --color-gray-900: var(--gray-900);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: 600;
-    letter-spacing: -0.025em;
-  }
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
 
-  h1 {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
-  h2 {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-  h4 {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-
-  p {
-    line-height: 1.75rem;
-    color: hsl(var(--muted-foreground));
-  }
-
-  @media (min-width: 768px) {
-    h1 {
-      font-size: 3rem;
-      line-height: 1;
-    }
-    h2 {
-      font-size: 2.25rem;
-      line-height: 2.5rem;
-    }
-    h3 {
-      font-size: 1.875rem;
-      line-height: 2.25rem;
-    }
-    h4 {
-      font-size: 1.5rem;
-      line-height: 2rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    h1 {
-      font-size: 3.75rem;
-      line-height: 1;
-    }
-    h2 {
-      font-size: 3rem;
-      line-height: 1;
-    }
-    h3 {
-      font-size: 2.25rem;
-      line-height: 2.5rem;
-    }
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }
