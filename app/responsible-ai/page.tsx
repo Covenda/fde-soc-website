@@ -186,7 +186,7 @@ Recommended Action: Patch within 24h`}
               Bias Mitigation
             </h2>
             <p className="text-lg text-gray-300">
-              We actively monitor and correct for bias in Lucid's outputs
+              We actively monitor and correct for bias in Lucid&apos;s outputs
             </p>
           </div>
 
@@ -209,7 +209,7 @@ Recommended Action: Patch within 24h`}
               <h3 className="font-bold text-white mb-3">Geographic Bias</h3>
               <p className="text-sm text-gray-300">
                 Verify that assets in different regions (e.g., EMEA vs. APAC)
-                aren't scored differently without cause.
+                aren&apos;t scored differently without cause.
               </p>
             </div>
           </div>
@@ -229,7 +229,7 @@ Recommended Action: Patch within 24h`}
                 Override Any Score
               </h3>
               <p className="text-gray-600">
-                Security teams can override Lucid's risk score for any
+                Security teams can override Lucid&apos;s risk score for any
                 vulnerability. Reason logged for audit trail. Override is
                 respected in all downstream workflows.
               </p>
@@ -240,7 +240,7 @@ Recommended Action: Patch within 24h`}
                 Custom Weight Adjustments
               </h3>
               <p className="text-gray-600">
-                Don't agree with how Lucid weighs factors? Tune the model:
+                Don&apos;t agree with how Lucid weighs factors? Tune the model:
                 increase/decrease weight for exploit availability, asset
                 criticality, etc. Changes take effect immediately.
               </p>
@@ -314,9 +314,9 @@ Recommended Action: Patch within 24h`}
               </h3>
               <p className="text-gray-600">
                 We track emerging AI regulations (EU AI Act, NIST AI Risk
-                Framework). Lucid is designed to comply with "high-risk AI
-                system" requirements: transparency, human oversight, and bias
-                monitoring.
+                Framework). Lucid is designed to comply with &quot;high-risk AI
+                system&quot; requirements: transparency, human oversight, and
+                bias monitoring.
               </p>
             </div>
           </div>

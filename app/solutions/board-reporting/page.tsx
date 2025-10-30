@@ -62,11 +62,12 @@ export default function BoardReporting() {
               </div>
               <div className="bg-white p-6 rounded-lg border border-gray-200">
                 <h3 className="font-bold text-gray-900 mb-3">
-                  Can't Prove ROI
+                  Can&apos;t Prove ROI
                 </h3>
                 <p className="text-gray-600">
-                  Board asks: "What are we getting for our security budget?" You
-                  can't show MTTR improvement, backlog reduction, or risk trend.
+                  Board asks: &quot;What are we getting for our security
+                  budget?&quot; You can&apos;t show MTTR improvement, backlog
+                  reduction, or risk trend.
                 </p>
               </div>
               <div className="bg-white p-6 rounded-lg border border-gray-200">
@@ -486,7 +487,7 @@ export default function BoardReporting() {
                   Day 3: Review with CISO
                 </h3>
                 <p className="text-gray-300 text-sm">
-                  Walk through draft. Refine language for your board's
+                  Walk through draft. Refine language for your board&apos;s
                   priorities. Add context on top risks.
                 </p>
               </div>
@@ -525,8 +526,8 @@ export default function BoardReporting() {
               Deliver Your Best Board Report Ever
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Book a demo. We'll show you Lucid's executive dashboard and sample
-              board reports.
+              Book a demo. We&apos;ll show you Lucid&apos;s executive dashboard
+              and sample board reports.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button href="/demo" size="lg">

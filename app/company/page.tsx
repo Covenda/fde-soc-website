@@ -70,9 +70,9 @@ export default function Company() {
                 Outcomes Over Activity
               </h3>
               <p className="text-gray-600">
-                We don't charge for hours logged or meetings attended. We commit
-                to risk reduction, MTTR, and backlog burn-down—metrics that
-                matter.
+                We don&apos;t charge for hours logged or meetings attended. We
+                commit to risk reduction, MTTR, and backlog burn-down—metrics
+                that matter.
               </p>
             </div>
 
@@ -104,7 +104,7 @@ export default function Company() {
               </h3>
               <p className="text-gray-600">
                 We run 30-day pilots, not 6-month RFPs. Week-long MVPs, not
-                year-long roadmaps. If something doesn't work, we fix it or
+                year-long roadmaps. If something doesn&apos;t work, we fix it or
                 pivot—fast.
               </p>
             </div>
@@ -208,7 +208,7 @@ export default function Company() {
               Join Covenda
             </h2>
             <p className="text-lg text-gray-300 mb-8">
-              We're hiring FDEs, security engineers, ML researchers, and
+              We&apos;re hiring FDEs, security engineers, ML researchers, and
               go-to-market roles. Remote-first, global team.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

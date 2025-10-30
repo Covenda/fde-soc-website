@@ -51,7 +51,7 @@ export default function CloudRisk() {
               <div className="bg-white p-6 rounded-lg border border-gray-200">
                 <h3 className="font-bold text-gray-900 mb-3">Context Gap</h3>
                 <p className="text-gray-600">
-                  CVSS scores don't know if your S3 bucket is public, your
+                  CVSS scores don&apos;t know if your S3 bucket is public, your
                   Lambda talks to production DBs, or your container is
                   internet-facing.
                 </p>
